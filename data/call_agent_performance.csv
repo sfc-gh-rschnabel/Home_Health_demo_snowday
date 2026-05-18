@@ -1,0 +1,501 @@
+agent_id,agent_name,location_id,phone_system,team,hire_date,avg_handle_time_seconds,avg_after_call_work_seconds,first_call_resolution_rate,calls_per_hour,avg_satisfaction_score,adherence_rate,utilization_rate,quality_score,escalation_rate,is_active
+AGT-0001,William Johnson,LOC-0695,Avaya,Sales Support,2025-01-26,592,43,0.65,8.0,4.34,0.92,0.772,77.4,0.116,True
+AGT-0002,Joseph Martinez,LOC-0360,Five9,Sales Support,2025-11-30,315,81,0.625,6.4,4.05,0.936,0.819,75.9,0.082,True
+AGT-0003,Jennifer Gonzalez,LOC-0379,Avaya,Escalations,2021-08-13,390,51,0.601,5.2,4.58,0.855,0.613,77.0,0.113,True
+AGT-0004,Thomas Williams,LOC-0232,Avaya,Escalations,2019-04-12,229,88,0.859,6.7,4.72,0.868,0.632,87.7,0.068,True
+AGT-0005,Susan Moore,LOC-0109,Avaya,Sales Support,2023-01-19,353,86,0.872,9.3,3.52,0.849,0.63,72.9,0.035,True
+AGT-0006,William Gonzalez,LOC-0629,RingCentral,Billing,2024-02-12,385,86,0.674,5.4,3.68,0.84,0.857,72.3,0.022,True
+AGT-0007,Linda Anderson,LOC-0340,RingCentral,Sales Support,2021-06-14,321,39,0.797,7.2,3.64,0.8,0.921,94.8,0.063,True
+AGT-0008,Richard Hernandez,LOC-0326,Avaya,Escalations,2024-04-06,249,115,0.804,6.1,4.63,0.862,0.74,95.8,0.096,True
+AGT-0009,James Martinez,LOC-0628,Avaya,Escalations,2020-05-02,389,99,0.878,11.9,4.34,0.887,0.848,97.5,0.086,False
+AGT-0010,Joseph Jackson,LOC-0435,Five9,Sales Support,2020-03-23,212,111,0.641,8.0,4.69,0.876,0.852,74.1,0.065,True
+AGT-0011,David Anderson,LOC-0231,RingCentral,Technical,2021-08-03,307,110,0.754,11.6,3.34,0.878,0.677,75.8,0.064,True
+AGT-0012,Nancy Smith,LOC-0279,RingCentral,Sales Support,2022-07-22,448,81,0.732,6.8,4.3,0.834,0.712,70.4,0.12,True
+AGT-0013,William Moore,LOC-0548,Avaya,Billing,2025-04-08,538,107,0.915,7.4,4.25,0.813,0.748,78.4,0.146,True
+AGT-0014,Elizabeth Brown,LOC-0366,Avaya,Patient Services,2022-07-23,456,55,0.796,4.2,4.82,0.931,0.751,97.2,0.028,True
+AGT-0015,Thomas Brown,LOC-0467,RingCentral,Patient Services,2023-08-30,563,120,0.551,5.5,3.75,0.916,0.606,88.0,0.03,True
+AGT-0016,Nancy Jones,LOC-0145,Five9,Patient Services,2020-02-14,323,54,0.738,7.3,3.95,0.849,0.721,70.0,0.025,True
+AGT-0017,Robert Moore,LOC-0505,RingCentral,Technical,2024-12-29,240,56,0.88,6.5,4.53,0.867,0.895,77.1,0.053,True
+AGT-0018,James Hernandez,LOC-0652,RingCentral,Technical,2020-11-02,189,95,0.918,5.1,3.32,0.973,0.622,85.6,0.063,True
+AGT-0019,Robert Taylor,LOC-0501,Avaya,Sales Support,2022-02-11,358,30,0.581,7.5,4.21,0.959,0.658,76.0,0.038,True
+AGT-0020,Richard Thomas,LOC-0489,Avaya,Billing,2025-12-11,449,85,0.555,9.6,3.2,0.813,0.721,87.3,0.078,True
+AGT-0021,James Rodriguez,LOC-0555,RingCentral,Billing,2022-08-10,282,54,0.831,4.9,3.07,0.975,0.611,73.6,0.083,True
+AGT-0022,Richard Martin,LOC-0021,Five9,Patient Services,2019-01-12,372,111,0.683,11.0,3.99,0.827,0.74,94.0,0.05,True
+AGT-0023,Thomas Jackson,LOC-0381,RingCentral,Billing,2023-01-03,594,59,0.818,10.1,4.66,0.99,0.689,78.7,0.065,True
+AGT-0024,Robert Garcia,LOC-0034,Avaya,Billing,2025-03-29,180,67,0.585,8.0,4.6,0.829,0.701,82.5,0.038,True
+AGT-0025,Robert Anderson,LOC-0143,RingCentral,Technical,2023-07-10,302,58,0.807,7.1,3.73,0.812,0.764,79.4,0.049,True
+AGT-0026,Nancy Thomas,LOC-0337,Five9,Patient Services,2025-11-14,181,88,0.778,7.5,3.61,0.806,0.609,84.5,0.059,True
+AGT-0027,David Davis,LOC-0427,RingCentral,Escalations,2022-12-01,423,84,0.602,9.3,3.33,0.982,0.844,91.4,0.117,True
+AGT-0028,Susan Thomas,LOC-0239,RingCentral,Billing,2019-03-01,352,90,0.714,8.2,4.85,0.99,0.623,89.9,0.029,True
+AGT-0029,David Thomas,LOC-0252,Avaya,Technical,2023-06-05,207,120,0.846,5.7,4.58,0.895,0.907,92.7,0.138,True
+AGT-0030,Susan Gonzalez,LOC-0522,RingCentral,Escalations,2024-10-12,555,39,0.565,5.4,4.85,0.961,0.608,73.1,0.128,True
+AGT-0031,James Johnson,LOC-0145,Avaya,Patient Services,2023-05-18,460,81,0.843,11.6,3.57,0.863,0.713,75.9,0.12,True
+AGT-0032,Margaret Smith,LOC-0058,RingCentral,Escalations,2020-05-25,526,55,0.633,5.1,4.84,0.927,0.911,97.6,0.117,True
+AGT-0033,Lisa Hernandez,LOC-0267,Five9,Technical,2020-08-10,485,43,0.851,10.5,4.34,0.822,0.915,77.6,0.047,True
+AGT-0034,Elizabeth Smith,LOC-0461,RingCentral,Technical,2023-09-14,567,112,0.659,9.8,3.72,0.97,0.62,93.7,0.127,True
+AGT-0035,Lisa Lopez,LOC-0113,Five9,Escalations,2019-04-09,597,63,0.741,11.2,3.97,0.855,0.808,73.9,0.063,True
+AGT-0036,Lisa Moore,LOC-0416,Avaya,Patient Services,2024-04-01,400,60,0.749,9.0,3.16,0.807,0.942,73.8,0.032,True
+AGT-0037,Elizabeth Brown,LOC-0131,Five9,Sales Support,2020-09-17,331,96,0.697,11.7,4.87,0.942,0.724,74.4,0.145,True
+AGT-0038,Susan Gonzalez,LOC-0242,Five9,Billing,2021-12-24,338,93,0.882,7.3,4.79,0.96,0.699,73.5,0.045,True
+AGT-0039,David Smith,LOC-0399,RingCentral,Patient Services,2024-10-23,464,46,0.675,10.4,4.31,0.825,0.679,79.9,0.137,True
+AGT-0040,Maria Taylor,LOC-0105,Five9,Billing,2023-05-25,240,111,0.611,6.4,3.75,0.805,0.921,82.0,0.023,True
+AGT-0041,Linda Moore,LOC-0059,RingCentral,Escalations,2024-08-03,252,90,0.633,7.3,3.17,0.915,0.764,79.8,0.032,True
+AGT-0042,Susan Brown,LOC-0595,RingCentral,Technical,2023-03-06,457,50,0.793,7.1,4.2,0.813,0.906,71.0,0.124,True
+AGT-0043,Thomas Lopez,LOC-0289,RingCentral,Technical,2023-05-21,413,99,0.58,11.1,3.2,0.868,0.758,79.1,0.131,True
+AGT-0044,James Martin,LOC-0125,Five9,Escalations,2020-12-27,183,32,0.735,7.0,4.3,0.913,0.712,92.0,0.021,True
+AGT-0045,Lisa Moore,LOC-0321,Avaya,Billing,2025-07-23,401,67,0.862,6.9,4.68,0.881,0.697,89.1,0.081,True
+AGT-0046,Susan Davis,LOC-0561,RingCentral,Patient Services,2020-11-05,395,70,0.764,6.4,3.46,0.821,0.833,77.0,0.095,True
+AGT-0047,Maria Thomas,LOC-0431,RingCentral,Patient Services,2021-12-10,209,43,0.789,9.1,4.88,0.938,0.931,78.1,0.082,True
+AGT-0048,Jennifer Gonzalez,LOC-0501,Five9,Sales Support,2023-02-06,538,46,0.627,6.6,3.82,0.93,0.844,96.1,0.104,True
+AGT-0049,James Garcia,LOC-0042,RingCentral,Sales Support,2025-01-12,457,61,0.869,6.9,3.83,0.888,0.736,91.5,0.075,True
+AGT-0050,Michael Gonzalez,LOC-0243,Avaya,Patient Services,2023-05-17,218,99,0.689,6.7,3.83,0.938,0.877,87.4,0.035,True
+AGT-0051,Nancy Davis,LOC-0528,Avaya,Technical,2023-08-15,559,64,0.721,7.6,4.53,0.956,0.714,85.9,0.024,True
+AGT-0052,Sarah Williams,LOC-0112,Five9,Patient Services,2022-04-12,480,64,0.878,5.2,4.25,0.836,0.849,95.7,0.028,True
+AGT-0053,Maria Jackson,LOC-0128,Avaya,Patient Services,2020-11-26,582,33,0.916,6.9,3.12,0.852,0.801,82.6,0.139,True
+AGT-0054,Sarah Lopez,LOC-0160,Avaya,Escalations,2025-11-28,572,55,0.897,6.5,4.38,0.948,0.848,70.9,0.05,True
+AGT-0055,Elizabeth Moore,LOC-0348,Five9,Technical,2024-10-22,386,114,0.667,10.7,3.76,0.836,0.742,99.6,0.076,False
+AGT-0056,Maria Miller,LOC-0551,RingCentral,Sales Support,2025-10-28,552,106,0.787,8.0,4.3,0.886,0.937,95.2,0.028,True
+AGT-0057,Sarah Smith,LOC-0434,Avaya,Billing,2023-12-06,270,62,0.722,6.9,3.41,0.93,0.877,99.2,0.149,True
+AGT-0058,William Brown,LOC-0587,RingCentral,Technical,2024-09-19,402,97,0.643,9.1,4.59,0.891,0.781,75.5,0.1,True
+AGT-0059,Maria Gonzalez,LOC-0105,Five9,Patient Services,2024-08-07,446,35,0.771,7.0,4.57,0.811,0.874,73.2,0.022,True
+AGT-0060,Maria Miller,LOC-0318,Avaya,Escalations,2019-10-10,432,87,0.854,4.3,4.47,0.875,0.651,94.9,0.043,True
+AGT-0061,Robert Miller,LOC-0116,RingCentral,Sales Support,2021-12-23,580,39,0.617,4.1,3.88,0.85,0.625,97.5,0.102,True
+AGT-0062,Michael Hernandez,LOC-0627,Five9,Sales Support,2025-04-12,534,51,0.836,8.5,3.57,0.891,0.791,76.8,0.06,True
+AGT-0063,Michael Davis,LOC-0651,Avaya,Patient Services,2022-11-01,343,66,0.766,10.0,3.66,0.979,0.798,78.8,0.046,True
+AGT-0064,Margaret Hernandez,LOC-0464,RingCentral,Technical,2022-09-04,487,103,0.83,8.9,3.58,0.853,0.787,95.2,0.128,True
+AGT-0065,James Gonzalez,LOC-0183,Avaya,Patient Services,2023-07-06,261,102,0.852,8.1,4.21,0.982,0.804,98.0,0.091,True
+AGT-0066,Robert Hernandez,LOC-0141,Five9,Sales Support,2022-10-16,191,99,0.583,6.5,3.29,0.906,0.647,75.2,0.135,True
+AGT-0067,William Lopez,LOC-0061,Avaya,Patient Services,2022-12-20,565,61,0.707,4.0,3.46,0.876,0.726,93.2,0.111,True
+AGT-0068,William Lopez,LOC-0403,Avaya,Patient Services,2020-04-05,260,62,0.592,8.4,3.63,0.891,0.665,70.3,0.088,True
+AGT-0069,Jennifer Jackson,LOC-0345,Avaya,Technical,2021-12-08,570,105,0.782,6.7,4.01,0.986,0.943,92.5,0.125,True
+AGT-0070,Richard Lopez,LOC-0053,Five9,Sales Support,2020-01-13,295,97,0.836,4.4,4.5,0.837,0.887,85.9,0.064,True
+AGT-0071,Karen Johnson,LOC-0492,RingCentral,Technical,2020-08-08,185,73,0.743,8.0,3.46,0.948,0.872,78.7,0.035,True
+AGT-0072,Sarah Williams,LOC-0365,Avaya,Billing,2020-05-02,235,46,0.802,8.0,3.74,0.85,0.646,83.4,0.135,True
+AGT-0073,David Miller,LOC-0109,Five9,Escalations,2021-08-03,544,115,0.829,10.3,4.03,0.852,0.927,86.0,0.108,True
+AGT-0074,Elizabeth Martinez,LOC-0671,Five9,Technical,2022-11-19,448,101,0.622,8.5,4.48,0.926,0.845,76.6,0.099,True
+AGT-0075,Jennifer Martin,LOC-0015,RingCentral,Technical,2020-01-16,237,50,0.683,8.3,3.12,0.927,0.669,74.0,0.095,False
+AGT-0076,Sarah Hernandez,LOC-0531,Five9,Technical,2021-08-19,314,66,0.847,7.6,3.34,0.981,0.67,81.5,0.073,True
+AGT-0077,Susan Martin,LOC-0078,RingCentral,Billing,2021-03-12,513,64,0.608,7.0,3.78,0.866,0.842,72.5,0.125,False
+AGT-0078,Susan Taylor,LOC-0060,Five9,Escalations,2023-08-29,235,97,0.79,8.7,3.05,0.847,0.769,75.3,0.1,True
+AGT-0079,James Garcia,LOC-0414,Five9,Patient Services,2019-01-14,448,48,0.828,7.7,4.4,0.962,0.758,70.0,0.085,True
+AGT-0080,Sarah Jones,LOC-0398,Five9,Escalations,2020-09-29,263,38,0.859,9.5,3.21,0.925,0.656,96.6,0.096,True
+AGT-0081,Lisa Hernandez,LOC-0110,RingCentral,Escalations,2021-11-13,505,34,0.764,9.3,3.55,0.812,0.805,80.5,0.062,True
+AGT-0082,Lisa Rodriguez,LOC-0463,Five9,Escalations,2024-01-04,289,75,0.917,5.2,4.55,0.838,0.691,78.0,0.027,True
+AGT-0083,David Williams,LOC-0367,Avaya,Technical,2021-09-28,420,115,0.655,6.4,4.21,0.853,0.924,88.5,0.037,True
+AGT-0084,Joseph Garcia,LOC-0422,RingCentral,Technical,2024-12-11,599,33,0.579,7.5,3.19,0.975,0.645,76.7,0.095,True
+AGT-0085,Joseph Jackson,LOC-0450,Avaya,Escalations,2021-09-21,191,65,0.587,6.6,4.86,0.812,0.839,82.8,0.12,True
+AGT-0086,James Rodriguez,LOC-0336,RingCentral,Billing,2025-10-18,477,53,0.672,11.6,4.14,0.882,0.68,75.5,0.094,True
+AGT-0087,Joseph Jackson,LOC-0215,Five9,Billing,2023-01-16,523,106,0.834,8.0,4.64,0.886,0.91,74.5,0.079,True
+AGT-0088,Sarah Thomas,LOC-0663,Five9,Escalations,2022-07-19,479,71,0.82,6.4,3.85,0.96,0.883,83.2,0.138,True
+AGT-0089,Michael Williams,LOC-0299,RingCentral,Technical,2025-07-14,212,51,0.739,7.8,3.58,0.825,0.804,87.9,0.123,True
+AGT-0090,David Garcia,LOC-0328,Avaya,Escalations,2025-11-19,472,117,0.891,7.2,4.53,0.802,0.895,85.7,0.037,True
+AGT-0091,Karen Martin,LOC-0060,Avaya,Technical,2024-02-14,531,50,0.694,4.4,4.83,0.97,0.743,72.3,0.114,True
+AGT-0092,Lisa Williams,LOC-0092,Avaya,Sales Support,2022-02-23,583,48,0.698,5.8,4.45,0.953,0.801,98.4,0.124,True
+AGT-0093,Elizabeth Lopez,LOC-0618,Five9,Patient Services,2023-06-29,566,54,0.725,6.0,4.01,0.88,0.831,83.8,0.123,True
+AGT-0094,Karen Brown,LOC-0660,Five9,Patient Services,2024-01-16,443,59,0.721,10.3,4.12,0.869,0.806,70.0,0.045,True
+AGT-0095,Susan Martin,LOC-0369,RingCentral,Technical,2023-08-13,379,38,0.569,8.5,3.79,0.989,0.628,73.2,0.037,True
+AGT-0096,Sarah Thomas,LOC-0561,Five9,Escalations,2023-09-30,361,30,0.707,7.9,3.18,0.897,0.676,82.6,0.099,True
+AGT-0097,Thomas Rodriguez,LOC-0619,RingCentral,Escalations,2024-03-18,311,47,0.871,8.5,4.54,0.887,0.906,93.6,0.025,True
+AGT-0098,Margaret Jones,LOC-0381,Avaya,Billing,2022-11-20,464,34,0.744,8.2,3.1,0.935,0.828,83.6,0.099,True
+AGT-0099,Robert Thomas,LOC-0541,RingCentral,Patient Services,2020-11-06,491,72,0.811,4.3,3.17,0.937,0.779,92.7,0.129,True
+AGT-0100,Sarah Johnson,LOC-0615,RingCentral,Patient Services,2019-01-21,551,116,0.645,5.7,3.37,0.813,0.738,80.2,0.051,True
+AGT-0101,James Garcia,LOC-0239,Avaya,Escalations,2022-10-18,554,52,0.871,5.8,4.29,0.888,0.892,91.9,0.077,True
+AGT-0102,Margaret Lopez,LOC-0025,Five9,Escalations,2020-11-06,369,44,0.665,5.4,3.88,0.946,0.832,75.1,0.091,True
+AGT-0103,Sarah Brown,LOC-0055,Five9,Technical,2020-11-04,202,92,0.797,5.8,3.63,0.818,0.922,74.6,0.069,True
+AGT-0104,Maria Jones,LOC-0001,Five9,Patient Services,2020-02-14,539,69,0.7,4.3,4.49,0.804,0.728,75.5,0.072,False
+AGT-0105,Margaret Gonzalez,LOC-0272,Five9,Escalations,2024-05-03,579,87,0.752,9.5,4.14,0.939,0.705,97.3,0.139,True
+AGT-0106,Robert Thomas,LOC-0017,RingCentral,Escalations,2019-09-25,488,77,0.898,5.6,4.29,0.951,0.75,92.4,0.042,True
+AGT-0107,James Jones,LOC-0222,Five9,Patient Services,2020-09-20,296,106,0.799,11.0,4.07,0.91,0.767,99.6,0.103,True
+AGT-0108,Thomas Garcia,LOC-0444,Five9,Patient Services,2022-02-09,499,112,0.642,6.5,4.13,0.837,0.784,78.5,0.084,True
+AGT-0109,Joseph Garcia,LOC-0291,Five9,Patient Services,2024-09-17,510,66,0.846,10.4,3.01,0.804,0.749,97.0,0.08,True
+AGT-0110,Linda Jackson,LOC-0476,RingCentral,Billing,2020-04-29,357,71,0.882,9.4,3.47,0.89,0.628,91.3,0.03,True
+AGT-0111,Elizabeth Johnson,LOC-0597,Five9,Patient Services,2019-05-12,409,118,0.875,9.9,4.85,0.888,0.647,78.1,0.091,True
+AGT-0112,Lisa Gonzalez,LOC-0226,Avaya,Sales Support,2024-03-20,362,72,0.793,9.3,4.53,0.846,0.92,74.1,0.145,True
+AGT-0113,William Jones,LOC-0596,RingCentral,Patient Services,2025-11-19,285,81,0.595,5.7,4.5,0.889,0.945,81.1,0.041,True
+AGT-0114,Linda Gonzalez,LOC-0400,RingCentral,Patient Services,2025-10-07,542,119,0.886,7.5,4.57,0.926,0.647,92.0,0.134,True
+AGT-0115,Karen Johnson,LOC-0449,Avaya,Escalations,2021-02-20,377,67,0.683,6.4,3.48,0.876,0.869,91.4,0.117,True
+AGT-0116,Susan Williams,LOC-0584,Avaya,Technical,2023-02-21,480,75,0.888,7.4,4.37,0.892,0.91,76.5,0.031,True
+AGT-0117,Jennifer Smith,LOC-0697,RingCentral,Sales Support,2022-09-23,223,35,0.815,6.8,3.71,0.82,0.629,96.0,0.127,True
+AGT-0118,James Miller,LOC-0576,RingCentral,Billing,2022-05-10,507,62,0.872,10.4,3.23,0.846,0.892,94.8,0.078,True
+AGT-0119,Richard Hernandez,LOC-0453,Five9,Sales Support,2023-02-08,409,118,0.564,5.3,4.4,0.808,0.851,74.6,0.095,True
+AGT-0120,James Johnson,LOC-0116,Five9,Sales Support,2025-07-18,587,83,0.904,9.2,3.47,0.971,0.867,90.7,0.065,True
+AGT-0121,James Rodriguez,LOC-0247,Avaya,Escalations,2021-10-12,308,96,0.797,4.5,3.69,0.872,0.689,84.0,0.128,True
+AGT-0122,William Thomas,LOC-0093,RingCentral,Escalations,2025-06-23,250,66,0.65,5.8,4.24,0.893,0.926,79.0,0.055,False
+AGT-0123,Margaret Miller,LOC-0436,RingCentral,Patient Services,2025-08-01,211,89,0.911,6.0,4.59,0.962,0.891,96.1,0.034,True
+AGT-0124,Lisa Smith,LOC-0313,Avaya,Technical,2021-05-03,441,50,0.572,6.3,4.58,0.901,0.879,76.6,0.074,True
+AGT-0125,Maria Taylor,LOC-0521,Avaya,Patient Services,2021-11-08,437,65,0.863,8.2,3.37,0.812,0.925,78.6,0.1,True
+AGT-0126,Nancy Garcia,LOC-0404,RingCentral,Patient Services,2021-08-09,209,72,0.684,5.2,4.54,0.867,0.765,95.6,0.138,True
+AGT-0127,Joseph Thomas,LOC-0079,Five9,Escalations,2022-08-31,196,103,0.763,8.7,3.39,0.982,0.777,82.2,0.029,True
+AGT-0128,Richard Wilson,LOC-0016,Five9,Escalations,2023-09-24,398,57,0.789,7.2,3.05,0.854,0.623,82.6,0.078,True
+AGT-0129,Nancy Davis,LOC-0198,Five9,Escalations,2024-03-19,230,93,0.667,7.4,4.43,0.965,0.612,95.5,0.148,True
+AGT-0130,Robert Johnson,LOC-0238,RingCentral,Billing,2024-10-16,312,64,0.871,9.2,4.57,0.899,0.698,80.3,0.094,True
+AGT-0131,Susan Smith,LOC-0570,Avaya,Billing,2023-06-30,303,69,0.849,8.8,4.56,0.884,0.85,81.0,0.107,True
+AGT-0132,Nancy Davis,LOC-0561,Avaya,Escalations,2025-08-14,500,86,0.667,6.0,4.67,0.965,0.671,92.6,0.108,True
+AGT-0133,James Moore,LOC-0119,RingCentral,Escalations,2023-03-19,498,118,0.905,6.5,4.22,0.895,0.95,98.2,0.037,True
+AGT-0134,Lisa Lopez,LOC-0411,RingCentral,Patient Services,2021-11-27,550,40,0.66,5.1,3.76,0.9,0.86,75.2,0.083,True
+AGT-0135,James Miller,LOC-0587,Avaya,Escalations,2021-03-22,492,57,0.723,8.3,4.77,0.883,0.896,89.7,0.124,True
+AGT-0136,Margaret Smith,LOC-0295,RingCentral,Sales Support,2020-03-14,360,68,0.803,5.4,4.06,0.921,0.786,87.8,0.04,True
+AGT-0137,Thomas Lopez,LOC-0221,Avaya,Billing,2019-04-18,288,87,0.836,4.1,4.85,0.827,0.756,91.2,0.057,True
+AGT-0138,Maria Davis,LOC-0263,Avaya,Technical,2022-10-24,200,61,0.85,7.5,4.41,0.829,0.652,99.5,0.128,True
+AGT-0139,Elizabeth Brown,LOC-0201,Five9,Escalations,2025-04-14,397,97,0.802,6.2,3.83,0.988,0.802,92.9,0.134,False
+AGT-0140,Nancy Martin,LOC-0550,Five9,Billing,2023-03-20,385,71,0.777,11.8,3.59,0.923,0.649,80.5,0.137,True
+AGT-0141,Elizabeth Williams,LOC-0020,Five9,Sales Support,2020-02-14,480,33,0.669,9.5,4.84,0.962,0.623,73.6,0.068,True
+AGT-0142,Jennifer Brown,LOC-0508,Five9,Sales Support,2024-11-15,266,85,0.899,8.4,3.16,0.804,0.704,92.8,0.144,True
+AGT-0143,Linda Martin,LOC-0324,Avaya,Billing,2022-01-04,369,70,0.762,4.4,4.78,0.977,0.878,73.9,0.146,False
+AGT-0144,Lisa Moore,LOC-0241,Five9,Billing,2020-12-20,546,114,0.819,5.0,3.4,0.887,0.748,83.4,0.14,True
+AGT-0145,Lisa Lopez,LOC-0376,Five9,Billing,2025-10-31,183,51,0.753,9.7,3.49,0.93,0.844,75.3,0.084,True
+AGT-0146,Thomas Hernandez,LOC-0211,RingCentral,Escalations,2021-11-03,377,116,0.657,6.7,4.34,0.889,0.823,75.2,0.094,True
+AGT-0147,Karen Martinez,LOC-0025,Avaya,Billing,2025-04-17,591,99,0.749,5.8,3.88,0.937,0.861,81.1,0.086,True
+AGT-0148,Jennifer Brown,LOC-0292,Five9,Billing,2019-02-05,495,102,0.813,6.0,4.1,0.946,0.941,72.5,0.148,True
+AGT-0149,Maria Thomas,LOC-0182,Five9,Sales Support,2023-02-03,412,32,0.784,4.9,4.21,0.828,0.761,99.5,0.028,True
+AGT-0150,James Martin,LOC-0404,RingCentral,Billing,2019-08-22,360,41,0.59,5.6,4.88,0.898,0.641,78.8,0.13,True
+AGT-0151,Elizabeth Lopez,LOC-0117,RingCentral,Escalations,2019-01-01,303,37,0.552,11.6,4.18,0.861,0.942,83.3,0.14,True
+AGT-0152,Elizabeth Miller,LOC-0233,RingCentral,Billing,2021-03-12,520,100,0.835,10.2,4.24,0.989,0.775,87.9,0.129,True
+AGT-0153,Linda Miller,LOC-0699,Five9,Patient Services,2025-05-21,599,85,0.885,8.7,3.53,0.928,0.935,90.6,0.114,True
+AGT-0154,Joseph Johnson,LOC-0423,RingCentral,Billing,2024-10-24,528,44,0.678,10.3,4.04,0.877,0.853,70.9,0.134,True
+AGT-0155,Joseph Moore,LOC-0295,Avaya,Sales Support,2021-05-19,300,96,0.756,5.8,3.48,0.976,0.912,91.9,0.074,True
+AGT-0156,Nancy Brown,LOC-0661,Avaya,Technical,2021-10-23,490,37,0.872,7.2,4.56,0.861,0.775,74.0,0.11,True
+AGT-0157,Nancy Thomas,LOC-0403,RingCentral,Technical,2020-09-05,453,80,0.836,11.2,4.42,0.946,0.679,84.5,0.149,True
+AGT-0158,Linda Brown,LOC-0357,Five9,Technical,2019-06-20,540,97,0.674,4.9,4.65,0.814,0.836,96.8,0.061,False
+AGT-0159,William Wilson,LOC-0217,RingCentral,Escalations,2020-10-29,452,72,0.892,7.5,4.46,0.932,0.891,76.7,0.135,True
+AGT-0160,Linda Rodriguez,LOC-0399,Avaya,Patient Services,2021-05-20,198,73,0.634,10.8,3.17,0.845,0.717,95.6,0.042,True
+AGT-0161,William Jones,LOC-0640,Five9,Sales Support,2025-08-15,227,120,0.636,8.0,3.08,0.802,0.647,86.6,0.098,True
+AGT-0162,Lisa Jackson,LOC-0051,RingCentral,Sales Support,2020-05-11,371,45,0.708,8.9,3.5,0.914,0.737,72.7,0.079,True
+AGT-0163,Linda Jackson,LOC-0674,RingCentral,Technical,2024-02-29,330,38,0.661,6.1,3.11,0.866,0.628,90.8,0.093,False
+AGT-0164,Karen Davis,LOC-0460,RingCentral,Patient Services,2025-07-03,471,89,0.867,9.4,3.68,0.88,0.736,95.1,0.032,True
+AGT-0165,Sarah Moore,LOC-0196,RingCentral,Escalations,2025-10-20,456,74,0.642,10.9,3.64,0.87,0.921,83.3,0.044,True
+AGT-0166,Lisa Lopez,LOC-0007,RingCentral,Sales Support,2020-03-04,467,64,0.556,6.4,4.31,0.925,0.851,76.6,0.066,True
+AGT-0167,Susan Anderson,LOC-0395,Avaya,Escalations,2023-04-11,316,36,0.592,10.8,3.93,0.82,0.628,99.4,0.123,True
+AGT-0168,Richard Wilson,LOC-0340,Avaya,Escalations,2021-03-07,281,82,0.758,9.2,4.51,0.96,0.665,85.0,0.136,True
+AGT-0169,Michael Johnson,LOC-0422,Avaya,Patient Services,2020-08-29,412,61,0.592,8.0,3.42,0.805,0.923,99.8,0.024,True
+AGT-0170,Karen Jones,LOC-0376,Five9,Sales Support,2022-05-04,442,65,0.717,11.3,3.07,0.809,0.898,74.7,0.146,True
+AGT-0171,Linda Wilson,LOC-0134,Avaya,Billing,2022-08-13,229,76,0.834,12.0,4.11,0.962,0.901,97.6,0.113,True
+AGT-0172,Maria Anderson,LOC-0394,Five9,Escalations,2022-09-01,544,114,0.863,11.6,4.43,0.892,0.892,82.4,0.071,False
+AGT-0173,Robert Brown,LOC-0255,Five9,Technical,2021-10-03,368,86,0.728,10.6,3.68,0.959,0.871,90.6,0.13,True
+AGT-0174,Sarah Smith,LOC-0365,Five9,Patient Services,2021-02-19,568,52,0.577,11.5,3.09,0.912,0.931,72.9,0.117,True
+AGT-0175,Maria Smith,LOC-0692,Avaya,Billing,2019-08-12,409,57,0.725,7.8,4.64,0.91,0.862,95.9,0.089,True
+AGT-0176,Sarah Gonzalez,LOC-0476,Five9,Billing,2019-04-18,533,83,0.638,5.4,4.72,0.932,0.916,75.2,0.147,True
+AGT-0177,Robert Hernandez,LOC-0293,Avaya,Sales Support,2020-02-26,370,87,0.899,8.8,4.66,0.907,0.856,74.8,0.065,True
+AGT-0178,Lisa Johnson,LOC-0661,Avaya,Billing,2020-02-06,377,57,0.603,4.9,4.34,0.935,0.764,70.8,0.128,True
+AGT-0179,Jennifer Williams,LOC-0603,RingCentral,Technical,2022-09-07,427,109,0.749,4.5,4.8,0.944,0.783,71.9,0.036,True
+AGT-0180,Joseph Rodriguez,LOC-0634,Five9,Sales Support,2025-01-27,286,71,0.77,8.7,3.79,0.859,0.627,85.9,0.082,True
+AGT-0181,Margaret Williams,LOC-0592,Avaya,Sales Support,2025-01-12,281,99,0.915,5.8,3.18,0.933,0.862,75.0,0.104,True
+AGT-0182,Robert Martin,LOC-0195,RingCentral,Escalations,2024-04-02,249,120,0.894,4.5,4.23,0.94,0.93,93.0,0.07,True
+AGT-0183,Thomas Thomas,LOC-0693,Five9,Technical,2022-03-05,451,42,0.591,4.5,3.84,0.962,0.888,90.1,0.148,True
+AGT-0184,Maria Williams,LOC-0308,Five9,Patient Services,2025-05-18,380,98,0.679,10.3,3.61,0.894,0.664,77.2,0.056,True
+AGT-0185,Maria Johnson,LOC-0089,Five9,Patient Services,2019-12-29,410,107,0.714,10.2,3.96,0.811,0.636,99.3,0.067,True
+AGT-0186,Margaret Martinez,LOC-0190,Avaya,Technical,2021-02-26,525,44,0.663,11.3,4.16,0.94,0.708,95.8,0.084,True
+AGT-0187,Sarah Taylor,LOC-0255,Avaya,Billing,2025-08-31,510,70,0.553,4.2,3.57,0.818,0.821,97.9,0.041,True
+AGT-0188,Elizabeth Williams,LOC-0322,Avaya,Sales Support,2019-01-21,469,36,0.598,7.2,3.12,0.836,0.85,78.9,0.021,True
+AGT-0189,Elizabeth Johnson,LOC-0396,RingCentral,Patient Services,2020-05-12,494,35,0.587,7.0,4.78,0.813,0.737,92.0,0.072,True
+AGT-0190,William Jackson,LOC-0027,RingCentral,Escalations,2023-01-03,582,102,0.882,5.1,3.7,0.857,0.823,75.5,0.028,True
+AGT-0191,Jennifer Jackson,LOC-0003,Avaya,Technical,2024-04-21,423,85,0.622,5.8,3.44,0.937,0.786,72.3,0.056,True
+AGT-0192,Michael Jones,LOC-0189,RingCentral,Patient Services,2023-01-03,247,82,0.872,7.3,4.04,0.98,0.942,82.1,0.1,True
+AGT-0193,Michael Smith,LOC-0469,RingCentral,Escalations,2020-08-03,582,57,0.607,7.9,3.23,0.842,0.734,74.8,0.082,False
+AGT-0194,Maria Martinez,LOC-0223,Five9,Escalations,2019-07-23,284,78,0.786,9.2,3.46,0.975,0.617,91.0,0.076,True
+AGT-0195,Michael Wilson,LOC-0461,RingCentral,Escalations,2019-01-31,483,31,0.561,7.2,4.34,0.947,0.631,89.2,0.098,True
+AGT-0196,Lisa Gonzalez,LOC-0465,RingCentral,Patient Services,2025-12-07,512,36,0.704,6.1,3.57,0.908,0.755,83.1,0.072,True
+AGT-0197,Margaret Jackson,LOC-0007,Avaya,Technical,2020-01-21,560,49,0.593,10.4,3.45,0.899,0.808,80.4,0.123,False
+AGT-0198,David Jackson,LOC-0580,RingCentral,Patient Services,2022-09-10,270,94,0.758,6.2,4.77,0.918,0.727,73.5,0.134,True
+AGT-0199,Sarah Jones,LOC-0598,Avaya,Billing,2023-10-17,266,57,0.661,9.6,3.46,0.818,0.632,98.0,0.103,True
+AGT-0200,James Martin,LOC-0212,Avaya,Escalations,2025-03-03,209,64,0.604,8.3,4.9,0.948,0.882,99.1,0.127,True
+AGT-0201,Nancy Thomas,LOC-0138,Five9,Sales Support,2023-11-05,221,56,0.709,10.2,4.85,0.95,0.847,82.7,0.115,True
+AGT-0202,Karen Rodriguez,LOC-0657,RingCentral,Sales Support,2024-10-10,568,54,0.911,9.8,4.46,0.901,0.761,99.2,0.022,False
+AGT-0203,Maria Gonzalez,LOC-0444,Five9,Sales Support,2022-03-18,330,89,0.643,10.4,4.77,0.884,0.782,82.6,0.021,True
+AGT-0204,James Thomas,LOC-0109,Five9,Billing,2024-04-25,269,78,0.854,11.9,3.21,0.916,0.851,81.8,0.031,True
+AGT-0205,David Smith,LOC-0060,Five9,Billing,2025-10-12,437,99,0.607,8.2,3.51,0.871,0.777,87.5,0.041,True
+AGT-0206,Robert Williams,LOC-0005,RingCentral,Billing,2022-05-02,316,80,0.868,6.4,3.91,0.857,0.924,74.1,0.067,True
+AGT-0207,James Gonzalez,LOC-0603,RingCentral,Billing,2021-11-29,219,102,0.745,8.4,4.49,0.948,0.619,75.1,0.128,True
+AGT-0208,Elizabeth Taylor,LOC-0501,Avaya,Patient Services,2021-02-25,529,37,0.787,4.6,3.56,0.933,0.711,93.2,0.13,True
+AGT-0209,Sarah Miller,LOC-0120,Avaya,Escalations,2019-03-08,367,69,0.744,4.5,3.82,0.899,0.91,95.7,0.02,True
+AGT-0210,Lisa Wilson,LOC-0445,Five9,Billing,2023-12-07,287,84,0.636,7.7,3.56,0.813,0.907,84.8,0.054,True
+AGT-0211,William Brown,LOC-0253,RingCentral,Patient Services,2024-04-25,421,54,0.813,10.1,3.73,0.947,0.659,92.0,0.125,False
+AGT-0212,Joseph Smith,LOC-0079,RingCentral,Escalations,2023-06-17,457,61,0.686,11.0,3.89,0.802,0.784,97.2,0.035,True
+AGT-0213,Karen Taylor,LOC-0641,RingCentral,Sales Support,2021-04-21,234,110,0.619,8.4,4.12,0.944,0.661,72.1,0.063,True
+AGT-0214,Karen Davis,LOC-0243,Avaya,Technical,2024-03-14,386,44,0.906,8.0,4.35,0.814,0.934,92.9,0.059,True
+AGT-0215,Karen Wilson,LOC-0381,Five9,Technical,2021-08-20,190,115,0.712,11.1,3.24,0.983,0.707,91.8,0.076,True
+AGT-0216,David Davis,LOC-0478,RingCentral,Technical,2023-01-04,328,115,0.652,11.7,4.71,0.942,0.653,72.9,0.125,True
+AGT-0217,Jennifer Thomas,LOC-0452,Five9,Sales Support,2024-04-05,398,105,0.8,11.9,3.83,0.851,0.906,73.1,0.117,True
+AGT-0218,Sarah Anderson,LOC-0558,Five9,Billing,2024-07-03,339,64,0.619,5.1,3.57,0.829,0.812,87.4,0.056,True
+AGT-0219,Richard Wilson,LOC-0074,Five9,Sales Support,2023-01-01,276,47,0.912,7.0,4.7,0.815,0.694,97.6,0.13,True
+AGT-0220,Susan Moore,LOC-0372,RingCentral,Billing,2019-12-06,360,88,0.554,8.0,3.85,0.877,0.73,90.8,0.072,False
+AGT-0221,Richard Hernandez,LOC-0185,Five9,Patient Services,2023-12-14,488,82,0.813,4.6,4.0,0.923,0.82,92.8,0.089,False
+AGT-0222,Robert Smith,LOC-0674,Avaya,Escalations,2020-06-28,395,108,0.611,9.6,3.28,0.966,0.8,97.4,0.137,True
+AGT-0223,Lisa Smith,LOC-0582,Avaya,Patient Services,2021-10-02,370,114,0.865,11.1,3.12,0.918,0.616,88.0,0.065,True
+AGT-0224,Lisa Jones,LOC-0272,Five9,Billing,2021-04-17,221,92,0.594,8.1,3.86,0.853,0.878,71.9,0.028,True
+AGT-0225,Susan Jackson,LOC-0630,RingCentral,Patient Services,2022-08-04,320,98,0.818,4.3,3.17,0.943,0.762,95.5,0.144,True
+AGT-0226,Karen Rodriguez,LOC-0321,RingCentral,Billing,2025-03-07,467,30,0.669,9.6,3.3,0.802,0.771,89.7,0.098,True
+AGT-0227,Linda Jones,LOC-0309,RingCentral,Billing,2022-11-28,368,107,0.572,7.1,3.84,0.97,0.857,85.8,0.052,True
+AGT-0228,Karen Johnson,LOC-0221,Avaya,Sales Support,2021-12-06,195,59,0.671,4.0,4.15,0.985,0.759,91.5,0.132,True
+AGT-0229,David Rodriguez,LOC-0437,Avaya,Sales Support,2021-08-20,538,115,0.87,7.7,3.17,0.941,0.88,97.8,0.024,False
+AGT-0230,Nancy Davis,LOC-0301,Avaya,Escalations,2025-12-23,548,93,0.759,4.6,3.02,0.839,0.82,84.7,0.117,True
+AGT-0231,Elizabeth Jackson,LOC-0431,RingCentral,Escalations,2025-12-21,388,34,0.909,9.7,3.42,0.882,0.933,82.5,0.104,True
+AGT-0232,Margaret Jones,LOC-0473,Five9,Billing,2024-08-09,222,83,0.584,10.8,3.83,0.869,0.666,89.3,0.067,True
+AGT-0233,Nancy Hernandez,LOC-0317,RingCentral,Billing,2022-11-15,424,31,0.574,11.5,3.3,0.893,0.648,88.5,0.062,True
+AGT-0234,Joseph Thomas,LOC-0455,Five9,Escalations,2019-03-01,576,100,0.734,5.5,3.65,0.86,0.76,93.5,0.04,True
+AGT-0235,Richard Jackson,LOC-0363,Avaya,Patient Services,2020-03-31,344,57,0.597,11.9,3.45,0.967,0.705,72.8,0.035,True
+AGT-0236,Elizabeth Rodriguez,LOC-0106,RingCentral,Escalations,2020-06-18,344,114,0.588,11.7,4.63,0.862,0.801,88.8,0.125,True
+AGT-0237,Linda Wilson,LOC-0485,Five9,Escalations,2022-08-24,317,40,0.857,7.6,4.72,0.924,0.745,74.9,0.143,True
+AGT-0238,Elizabeth Hernandez,LOC-0192,RingCentral,Patient Services,2021-12-08,416,105,0.761,6.7,3.82,0.895,0.895,78.4,0.025,True
+AGT-0239,Michael Lopez,LOC-0090,Avaya,Billing,2019-03-14,323,46,0.573,8.0,4.87,0.842,0.678,97.5,0.038,True
+AGT-0240,Richard Brown,LOC-0603,RingCentral,Billing,2024-06-24,568,64,0.782,5.5,3.46,0.83,0.788,91.1,0.035,True
+AGT-0241,Sarah Williams,LOC-0598,Avaya,Technical,2020-04-08,271,66,0.85,4.0,3.96,0.933,0.636,99.5,0.125,True
+AGT-0242,Linda Miller,LOC-0204,RingCentral,Escalations,2024-09-21,211,106,0.786,9.9,4.29,0.826,0.94,70.6,0.118,True
+AGT-0243,Nancy Brown,LOC-0602,Avaya,Billing,2023-04-09,295,63,0.832,4.7,3.8,0.976,0.782,96.2,0.023,True
+AGT-0244,Nancy Wilson,LOC-0315,RingCentral,Technical,2023-05-08,424,54,0.843,5.1,3.74,0.865,0.813,98.8,0.149,True
+AGT-0245,Elizabeth Johnson,LOC-0269,Five9,Technical,2025-11-17,412,39,0.861,11.8,4.84,0.823,0.826,76.0,0.062,True
+AGT-0246,Richard Anderson,LOC-0400,Avaya,Billing,2019-04-18,419,82,0.643,9.3,3.77,0.969,0.931,87.6,0.045,True
+AGT-0247,Karen Taylor,LOC-0013,RingCentral,Technical,2019-11-09,528,94,0.877,6.1,3.57,0.921,0.766,82.1,0.096,True
+AGT-0248,Joseph Moore,LOC-0165,Avaya,Escalations,2024-11-16,519,58,0.878,6.5,4.72,0.859,0.782,86.9,0.07,True
+AGT-0249,Richard Garcia,LOC-0570,Five9,Patient Services,2019-01-19,373,120,0.635,8.1,3.82,0.899,0.734,88.1,0.138,True
+AGT-0250,Joseph Davis,LOC-0118,Five9,Escalations,2025-03-17,533,48,0.713,10.7,4.89,0.901,0.888,84.8,0.125,False
+AGT-0251,Karen Taylor,LOC-0040,Five9,Patient Services,2024-10-07,412,88,0.752,10.1,3.13,0.812,0.643,91.1,0.098,True
+AGT-0252,Karen Taylor,LOC-0469,RingCentral,Sales Support,2025-12-03,298,120,0.853,8.2,3.76,0.989,0.917,97.4,0.142,False
+AGT-0253,Nancy Smith,LOC-0008,Five9,Technical,2022-03-13,380,59,0.671,10.6,3.17,0.869,0.836,74.5,0.133,True
+AGT-0254,Elizabeth Jackson,LOC-0167,Five9,Sales Support,2021-09-02,574,39,0.726,6.9,3.83,0.834,0.75,86.8,0.09,True
+AGT-0255,Joseph Garcia,LOC-0243,RingCentral,Sales Support,2020-11-20,376,67,0.605,9.3,4.61,0.988,0.806,91.6,0.101,True
+AGT-0256,Jennifer Williams,LOC-0568,RingCentral,Patient Services,2024-05-15,451,37,0.765,4.7,3.7,0.984,0.94,99.1,0.065,True
+AGT-0257,Lisa Anderson,LOC-0289,RingCentral,Escalations,2021-06-30,541,66,0.648,8.7,3.78,0.952,0.919,76.4,0.138,True
+AGT-0258,James Moore,LOC-0454,Five9,Technical,2024-07-19,465,64,0.595,9.4,3.86,0.86,0.855,87.3,0.067,True
+AGT-0259,Richard Jackson,LOC-0659,RingCentral,Billing,2021-04-06,299,87,0.903,6.3,4.17,0.984,0.669,91.9,0.074,True
+AGT-0260,Elizabeth Garcia,LOC-0597,Avaya,Patient Services,2025-11-19,336,106,0.828,10.9,3.78,0.809,0.727,79.0,0.123,True
+AGT-0261,Nancy Williams,LOC-0539,Avaya,Sales Support,2022-08-06,563,98,0.654,8.5,3.17,0.915,0.763,74.9,0.036,True
+AGT-0262,Michael Gonzalez,LOC-0676,Avaya,Billing,2021-11-25,243,54,0.687,7.5,4.1,0.989,0.84,88.5,0.101,True
+AGT-0263,Richard Smith,LOC-0153,RingCentral,Escalations,2019-10-20,533,103,0.844,7.3,3.29,0.811,0.747,95.0,0.03,True
+AGT-0264,Jennifer Rodriguez,LOC-0159,Avaya,Technical,2023-06-02,207,73,0.584,4.8,4.76,0.87,0.794,91.7,0.026,True
+AGT-0265,David Jackson,LOC-0021,Five9,Patient Services,2019-07-31,446,77,0.656,6.0,3.98,0.978,0.719,98.3,0.139,True
+AGT-0266,William Brown,LOC-0660,Avaya,Billing,2020-05-11,296,97,0.671,9.5,3.22,0.976,0.853,71.4,0.116,True
+AGT-0267,Jennifer Davis,LOC-0349,RingCentral,Technical,2021-04-15,468,44,0.777,5.5,4.53,0.816,0.732,97.3,0.145,True
+AGT-0268,Susan Miller,LOC-0643,Avaya,Sales Support,2023-04-09,474,75,0.555,7.1,3.13,0.973,0.657,92.8,0.049,True
+AGT-0269,James Rodriguez,LOC-0163,Avaya,Escalations,2024-06-26,521,113,0.756,9.8,4.13,0.813,0.721,80.6,0.148,False
+AGT-0270,Margaret Miller,LOC-0582,Avaya,Patient Services,2021-04-08,251,106,0.737,9.1,4.33,0.915,0.657,91.1,0.142,True
+AGT-0271,Sarah Anderson,LOC-0168,Avaya,Sales Support,2024-03-07,300,59,0.79,9.9,3.71,0.917,0.672,95.6,0.121,True
+AGT-0272,Thomas Martinez,LOC-0567,Avaya,Escalations,2023-01-17,306,96,0.552,10.7,3.31,0.867,0.804,88.0,0.142,True
+AGT-0273,Elizabeth Martinez,LOC-0135,Avaya,Sales Support,2020-03-20,260,47,0.577,10.0,4.11,0.817,0.643,96.5,0.024,True
+AGT-0274,Karen Miller,LOC-0596,RingCentral,Sales Support,2024-02-09,566,72,0.668,9.1,4.63,0.811,0.891,99.2,0.1,True
+AGT-0275,Elizabeth Martin,LOC-0590,Five9,Sales Support,2024-04-04,257,85,0.703,10.1,3.9,0.837,0.896,75.0,0.04,False
+AGT-0276,Lisa Johnson,LOC-0657,RingCentral,Patient Services,2025-12-23,280,113,0.817,4.2,3.33,0.897,0.749,97.0,0.065,True
+AGT-0277,Sarah Thomas,LOC-0526,Five9,Sales Support,2019-02-27,180,46,0.573,9.0,4.45,0.832,0.679,71.4,0.149,True
+AGT-0278,William Taylor,LOC-0047,Avaya,Sales Support,2019-03-03,441,105,0.721,10.2,4.03,0.809,0.601,89.3,0.135,True
+AGT-0279,Michael Miller,LOC-0602,RingCentral,Sales Support,2022-11-11,183,95,0.816,11.8,4.05,0.913,0.942,72.2,0.145,True
+AGT-0280,Elizabeth Gonzalez,LOC-0477,RingCentral,Patient Services,2021-03-04,319,34,0.646,8.3,3.74,0.963,0.783,87.3,0.033,True
+AGT-0281,Nancy Williams,LOC-0693,RingCentral,Sales Support,2022-01-18,470,109,0.606,11.1,3.06,0.881,0.799,70.9,0.074,True
+AGT-0282,David Martinez,LOC-0359,Five9,Patient Services,2023-07-13,278,75,0.605,4.7,3.41,0.855,0.638,74.7,0.079,True
+AGT-0283,Thomas Thomas,LOC-0443,RingCentral,Billing,2023-03-19,279,119,0.895,10.6,4.18,0.861,0.783,93.4,0.071,True
+AGT-0284,Margaret Hernandez,LOC-0289,Five9,Patient Services,2022-03-20,550,81,0.739,11.8,3.97,0.824,0.644,88.2,0.076,True
+AGT-0285,Karen Martinez,LOC-0532,Avaya,Billing,2025-09-21,563,104,0.907,10.7,4.14,0.956,0.618,81.8,0.125,True
+AGT-0286,David Hernandez,LOC-0423,RingCentral,Escalations,2021-01-15,309,48,0.807,10.6,3.35,0.921,0.728,92.1,0.128,True
+AGT-0287,Nancy Martin,LOC-0056,Avaya,Sales Support,2020-11-23,252,61,0.73,9.3,3.68,0.908,0.93,97.6,0.075,True
+AGT-0288,Richard Brown,LOC-0040,Avaya,Escalations,2022-10-09,269,81,0.565,4.3,3.58,0.81,0.72,74.6,0.095,True
+AGT-0289,Linda Gonzalez,LOC-0179,Avaya,Technical,2021-06-18,211,50,0.809,4.1,3.99,0.971,0.614,87.5,0.068,True
+AGT-0290,James Williams,LOC-0002,Avaya,Sales Support,2020-01-14,383,79,0.849,6.3,3.3,0.841,0.614,81.9,0.122,True
+AGT-0291,Susan Hernandez,LOC-0446,RingCentral,Technical,2023-03-25,400,79,0.704,5.5,3.94,0.862,0.637,80.4,0.11,True
+AGT-0292,Sarah Martinez,LOC-0631,Five9,Patient Services,2020-07-07,488,82,0.571,8.7,3.5,0.878,0.672,92.2,0.119,True
+AGT-0293,William Thomas,LOC-0281,Five9,Patient Services,2024-04-02,181,89,0.867,10.7,3.35,0.916,0.744,78.6,0.052,True
+AGT-0294,Robert Jones,LOC-0609,Avaya,Sales Support,2019-08-25,356,110,0.721,11.4,3.35,0.839,0.82,90.0,0.148,True
+AGT-0295,Karen Rodriguez,LOC-0573,Avaya,Sales Support,2024-08-28,307,51,0.848,11.2,3.2,0.917,0.699,79.7,0.135,True
+AGT-0296,James Smith,LOC-0455,RingCentral,Patient Services,2021-10-01,588,90,0.761,11.9,4.09,0.852,0.896,96.4,0.092,True
+AGT-0297,Susan Miller,LOC-0281,RingCentral,Billing,2019-10-16,418,102,0.627,10.1,3.39,0.948,0.931,70.1,0.071,True
+AGT-0298,Joseph Martin,LOC-0387,Avaya,Technical,2023-02-21,459,45,0.816,8.5,4.41,0.979,0.819,81.1,0.045,True
+AGT-0299,Thomas Moore,LOC-0320,RingCentral,Patient Services,2019-07-09,556,81,0.811,9.1,4.83,0.93,0.799,93.4,0.047,True
+AGT-0300,Jennifer Smith,LOC-0130,RingCentral,Technical,2024-11-12,254,39,0.908,11.2,4.07,0.819,0.858,97.3,0.042,True
+AGT-0301,James Anderson,LOC-0377,RingCentral,Escalations,2019-05-06,287,110,0.55,9.4,3.39,0.898,0.86,99.6,0.091,True
+AGT-0302,Nancy Johnson,LOC-0337,RingCentral,Billing,2023-06-07,517,80,0.597,7.5,4.67,0.954,0.863,90.9,0.147,True
+AGT-0303,Margaret Miller,LOC-0156,Five9,Technical,2025-01-16,426,67,0.702,5.6,3.5,0.912,0.662,86.0,0.14,True
+AGT-0304,Robert Gonzalez,LOC-0022,RingCentral,Patient Services,2022-09-19,180,100,0.646,5.6,3.83,0.857,0.801,88.7,0.112,True
+AGT-0305,Joseph Garcia,LOC-0452,Avaya,Sales Support,2023-09-23,291,83,0.831,9.7,3.4,0.938,0.771,95.9,0.059,True
+AGT-0306,Nancy Martinez,LOC-0324,Avaya,Patient Services,2025-03-28,434,53,0.864,11.9,3.08,0.86,0.867,71.3,0.132,True
+AGT-0307,Lisa Martinez,LOC-0144,Avaya,Billing,2021-12-12,592,57,0.759,11.5,3.61,0.869,0.681,93.3,0.116,True
+AGT-0308,William Johnson,LOC-0289,Avaya,Escalations,2024-04-14,305,106,0.86,6.0,4.42,0.969,0.852,92.0,0.032,True
+AGT-0309,David Davis,LOC-0154,Five9,Technical,2024-01-24,210,72,0.713,9.7,4.45,0.831,0.833,90.3,0.106,True
+AGT-0310,William Taylor,LOC-0072,RingCentral,Escalations,2021-08-17,472,66,0.696,10.0,3.26,0.87,0.636,92.4,0.138,True
+AGT-0311,Karen Moore,LOC-0380,Avaya,Sales Support,2019-05-14,525,118,0.605,11.5,4.41,0.935,0.665,94.0,0.121,True
+AGT-0312,Margaret Martin,LOC-0179,Five9,Technical,2025-04-23,487,75,0.815,8.6,3.92,0.922,0.701,79.1,0.036,True
+AGT-0313,Nancy Martin,LOC-0077,Avaya,Escalations,2019-10-30,420,66,0.569,11.1,3.01,0.915,0.944,84.8,0.058,True
+AGT-0314,Linda Brown,LOC-0577,Avaya,Technical,2019-03-29,478,88,0.684,4.6,4.26,0.964,0.717,98.1,0.069,True
+AGT-0315,Michael Wilson,LOC-0557,Five9,Sales Support,2023-03-12,195,33,0.604,7.3,4.16,0.873,0.695,97.8,0.132,True
+AGT-0316,Joseph Johnson,LOC-0508,RingCentral,Escalations,2023-11-04,439,117,0.73,4.4,3.71,0.843,0.789,80.3,0.033,True
+AGT-0317,Sarah Hernandez,LOC-0611,Avaya,Escalations,2019-10-01,565,41,0.659,8.5,3.94,0.917,0.883,84.6,0.141,True
+AGT-0318,James Moore,LOC-0283,RingCentral,Technical,2020-04-28,270,120,0.862,11.1,4.0,0.882,0.876,88.6,0.144,True
+AGT-0319,Margaret Wilson,LOC-0683,Avaya,Escalations,2025-07-10,248,84,0.629,11.4,3.77,0.899,0.929,80.7,0.117,True
+AGT-0320,William Williams,LOC-0573,RingCentral,Sales Support,2021-12-05,257,107,0.896,8.3,3.3,0.918,0.852,83.1,0.068,True
+AGT-0321,Nancy Jones,LOC-0562,Five9,Technical,2024-04-21,425,96,0.774,6.2,3.9,0.85,0.894,91.8,0.05,True
+AGT-0322,Margaret Martinez,LOC-0459,RingCentral,Billing,2025-03-12,262,67,0.783,6.8,3.88,0.852,0.706,78.2,0.057,True
+AGT-0323,Susan Hernandez,LOC-0009,RingCentral,Technical,2022-10-14,263,83,0.755,8.0,4.56,0.86,0.667,80.4,0.114,True
+AGT-0324,Margaret Smith,LOC-0573,Five9,Technical,2021-08-22,388,103,0.769,9.1,3.44,0.851,0.685,92.3,0.058,True
+AGT-0325,Sarah Jackson,LOC-0282,Five9,Technical,2020-10-28,314,79,0.885,7.6,3.35,0.802,0.774,85.8,0.083,True
+AGT-0326,William Miller,LOC-0094,RingCentral,Escalations,2024-08-31,260,41,0.795,8.1,4.27,0.837,0.64,78.8,0.06,True
+AGT-0327,Nancy Martin,LOC-0480,Avaya,Escalations,2020-01-03,444,120,0.623,10.5,4.24,0.807,0.802,89.4,0.034,True
+AGT-0328,Maria Jackson,LOC-0530,Avaya,Sales Support,2022-03-27,270,120,0.844,8.9,4.85,0.863,0.736,99.5,0.085,True
+AGT-0329,Sarah Anderson,LOC-0020,RingCentral,Sales Support,2022-11-08,320,90,0.836,4.4,3.87,0.982,0.789,70.6,0.041,True
+AGT-0330,James Smith,LOC-0542,Five9,Billing,2023-03-31,597,62,0.816,4.6,4.17,0.965,0.943,90.2,0.089,True
+AGT-0331,David Rodriguez,LOC-0466,Five9,Escalations,2025-06-22,184,117,0.758,7.4,3.9,0.941,0.846,97.8,0.11,False
+AGT-0332,Sarah Jackson,LOC-0310,Avaya,Sales Support,2024-01-09,301,100,0.898,8.0,3.98,0.973,0.823,93.4,0.086,True
+AGT-0333,Linda Jackson,LOC-0142,Avaya,Technical,2021-10-08,431,119,0.608,10.2,4.86,0.966,0.944,98.2,0.076,True
+AGT-0334,Lisa Miller,LOC-0605,Five9,Patient Services,2021-09-19,514,111,0.604,10.4,4.51,0.913,0.825,70.2,0.031,True
+AGT-0335,Susan Lopez,LOC-0094,Five9,Escalations,2024-10-20,216,53,0.818,8.1,4.87,0.939,0.888,84.9,0.119,True
+AGT-0336,Elizabeth Gonzalez,LOC-0517,Five9,Sales Support,2020-07-07,538,105,0.708,4.2,3.13,0.938,0.722,82.4,0.054,True
+AGT-0337,David Moore,LOC-0101,Five9,Billing,2025-02-25,347,56,0.632,11.1,3.12,0.897,0.937,76.6,0.138,True
+AGT-0338,William Moore,LOC-0035,Five9,Billing,2019-06-05,257,104,0.913,6.7,4.18,0.962,0.947,76.3,0.045,False
+AGT-0339,Jennifer Moore,LOC-0112,RingCentral,Escalations,2022-05-21,479,116,0.867,8.1,3.15,0.91,0.721,79.1,0.026,False
+AGT-0340,Nancy Miller,LOC-0671,RingCentral,Billing,2021-10-24,320,51,0.909,11.7,4.69,0.817,0.695,94.4,0.021,True
+AGT-0341,Sarah Moore,LOC-0357,Five9,Technical,2024-09-26,286,112,0.6,6.1,3.75,0.886,0.92,74.5,0.126,True
+AGT-0342,Margaret Smith,LOC-0243,Five9,Sales Support,2025-03-04,446,37,0.801,8.5,3.63,0.821,0.803,72.6,0.031,True
+AGT-0343,Thomas Martinez,LOC-0324,Avaya,Patient Services,2025-07-28,248,40,0.628,10.9,4.74,0.965,0.936,99.4,0.063,True
+AGT-0344,Margaret Thomas,LOC-0494,RingCentral,Patient Services,2024-03-19,207,97,0.867,11.8,4.66,0.809,0.767,85.8,0.099,True
+AGT-0345,Linda Davis,LOC-0190,Five9,Patient Services,2024-01-03,225,99,0.82,8.2,4.43,0.803,0.882,89.4,0.029,True
+AGT-0346,Jennifer Brown,LOC-0447,Avaya,Escalations,2022-12-19,331,96,0.742,6.5,4.45,0.862,0.929,90.1,0.096,True
+AGT-0347,Thomas Wilson,LOC-0318,Avaya,Patient Services,2019-12-29,456,76,0.666,6.7,4.78,0.876,0.94,79.0,0.117,True
+AGT-0348,Joseph Lopez,LOC-0351,Avaya,Patient Services,2022-05-21,512,67,0.761,5.5,3.76,0.923,0.626,96.5,0.026,True
+AGT-0349,Linda Moore,LOC-0391,RingCentral,Escalations,2023-09-09,240,72,0.57,8.8,3.52,0.911,0.813,77.0,0.039,True
+AGT-0350,Sarah Martinez,LOC-0356,Five9,Sales Support,2023-11-26,244,44,0.893,10.0,4.45,0.953,0.902,98.6,0.086,False
+AGT-0351,Robert Jackson,LOC-0660,Avaya,Escalations,2021-12-26,321,108,0.809,9.9,4.07,0.905,0.675,81.3,0.05,True
+AGT-0352,Karen Moore,LOC-0091,RingCentral,Patient Services,2019-05-06,319,65,0.591,10.3,3.37,0.923,0.796,94.3,0.077,False
+AGT-0353,Maria Martin,LOC-0136,RingCentral,Technical,2019-11-23,529,88,0.66,11.3,3.09,0.811,0.922,93.5,0.086,True
+AGT-0354,David Anderson,LOC-0229,RingCentral,Sales Support,2023-05-13,209,93,0.639,5.7,4.89,0.809,0.85,79.8,0.12,True
+AGT-0355,Margaret Jackson,LOC-0191,RingCentral,Escalations,2025-10-20,398,60,0.668,5.1,3.72,0.917,0.8,76.2,0.073,True
+AGT-0356,Nancy Wilson,LOC-0456,Avaya,Escalations,2021-09-26,233,48,0.691,12.0,3.83,0.906,0.718,80.5,0.118,True
+AGT-0357,Linda Wilson,LOC-0298,Five9,Patient Services,2023-12-22,564,54,0.612,6.1,4.3,0.865,0.711,78.6,0.131,True
+AGT-0358,Margaret Davis,LOC-0619,Avaya,Patient Services,2020-08-27,480,55,0.589,7.3,3.71,0.874,0.62,77.0,0.072,True
+AGT-0359,Margaret Lopez,LOC-0224,Five9,Escalations,2023-11-23,520,35,0.611,5.3,3.65,0.935,0.611,82.1,0.144,True
+AGT-0360,Maria Smith,LOC-0674,Five9,Technical,2022-01-08,531,57,0.758,6.9,4.71,0.944,0.707,84.0,0.11,False
+AGT-0361,Nancy Jones,LOC-0445,RingCentral,Escalations,2019-04-11,305,75,0.577,11.7,3.11,0.88,0.933,94.0,0.11,False
+AGT-0362,Richard Garcia,LOC-0399,Five9,Technical,2019-09-22,477,35,0.791,6.5,4.21,0.848,0.794,94.2,0.033,False
+AGT-0363,Karen Garcia,LOC-0375,RingCentral,Billing,2025-12-16,559,87,0.833,9.8,4.34,0.948,0.849,79.5,0.072,True
+AGT-0364,Maria Brown,LOC-0241,Avaya,Billing,2023-02-10,203,46,0.704,4.5,4.02,0.927,0.788,81.4,0.126,True
+AGT-0365,Elizabeth Thomas,LOC-0060,Avaya,Billing,2022-11-08,410,81,0.82,7.6,3.82,0.893,0.921,88.4,0.12,True
+AGT-0366,Maria Lopez,LOC-0510,Five9,Technical,2019-09-11,407,74,0.656,5.8,3.96,0.925,0.707,98.1,0.065,False
+AGT-0367,James Miller,LOC-0392,RingCentral,Billing,2020-01-02,432,112,0.831,6.1,3.11,0.958,0.777,77.0,0.084,True
+AGT-0368,David Miller,LOC-0478,RingCentral,Patient Services,2019-10-15,406,76,0.703,4.2,4.85,0.972,0.662,91.1,0.144,True
+AGT-0369,James Rodriguez,LOC-0517,Five9,Technical,2021-01-01,264,58,0.628,4.4,3.13,0.967,0.658,74.7,0.049,True
+AGT-0370,William Gonzalez,LOC-0231,Avaya,Patient Services,2021-09-05,288,96,0.847,6.4,3.05,0.878,0.646,99.5,0.057,True
+AGT-0371,Joseph Thomas,LOC-0456,RingCentral,Billing,2019-07-24,479,31,0.553,10.3,3.78,0.841,0.771,80.4,0.044,True
+AGT-0372,Jennifer Gonzalez,LOC-0373,Five9,Escalations,2024-10-19,452,106,0.611,11.1,3.16,0.878,0.788,95.7,0.117,True
+AGT-0373,Sarah Hernandez,LOC-0484,Five9,Escalations,2023-06-03,280,80,0.557,7.9,4.26,0.86,0.605,77.3,0.077,True
+AGT-0374,Karen Martinez,LOC-0357,Avaya,Escalations,2022-02-20,388,118,0.738,10.2,3.28,0.97,0.689,76.4,0.021,True
+AGT-0375,Michael Rodriguez,LOC-0076,Avaya,Billing,2024-09-02,307,113,0.843,4.6,3.08,0.844,0.738,77.1,0.112,True
+AGT-0376,Maria Brown,LOC-0303,RingCentral,Sales Support,2025-05-09,304,110,0.683,8.8,3.28,0.989,0.776,72.2,0.055,False
+AGT-0377,Karen Hernandez,LOC-0313,RingCentral,Patient Services,2022-03-31,447,87,0.807,9.1,4.14,0.939,0.728,84.3,0.12,True
+AGT-0378,Richard Jones,LOC-0025,RingCentral,Billing,2023-01-20,599,87,0.861,9.2,4.26,0.967,0.857,77.8,0.062,True
+AGT-0379,Richard Rodriguez,LOC-0154,Avaya,Patient Services,2025-01-07,380,31,0.641,8.2,4.3,0.908,0.61,97.9,0.059,True
+AGT-0380,Elizabeth Brown,LOC-0404,RingCentral,Technical,2025-08-28,187,86,0.873,8.3,4.76,0.813,0.675,85.2,0.115,True
+AGT-0381,Jennifer Davis,LOC-0618,Avaya,Sales Support,2022-08-31,514,85,0.656,7.2,3.8,0.952,0.873,85.0,0.027,True
+AGT-0382,Michael Rodriguez,LOC-0484,Five9,Patient Services,2021-12-10,205,56,0.596,9.5,4.72,0.924,0.695,85.2,0.023,False
+AGT-0383,Jennifer Rodriguez,LOC-0351,Avaya,Escalations,2023-02-01,540,107,0.894,7.6,3.71,0.949,0.714,98.6,0.097,True
+AGT-0384,Jennifer Garcia,LOC-0686,Avaya,Sales Support,2024-03-04,599,57,0.573,5.2,3.11,0.838,0.802,87.8,0.125,True
+AGT-0385,Elizabeth Jones,LOC-0010,RingCentral,Escalations,2019-05-03,543,96,0.807,7.2,4.55,0.833,0.885,81.1,0.103,True
+AGT-0386,William Davis,LOC-0651,RingCentral,Billing,2023-11-23,506,93,0.743,4.7,4.18,0.816,0.741,93.3,0.053,True
+AGT-0387,Susan Anderson,LOC-0119,Avaya,Sales Support,2021-09-28,305,56,0.656,11.3,4.4,0.863,0.676,87.0,0.102,True
+AGT-0388,Susan Miller,LOC-0653,RingCentral,Patient Services,2025-10-19,219,43,0.604,11.8,4.67,0.975,0.77,91.1,0.096,True
+AGT-0389,David Rodriguez,LOC-0351,Five9,Sales Support,2022-03-08,247,50,0.805,7.3,3.91,0.908,0.888,91.1,0.05,True
+AGT-0390,Sarah Jones,LOC-0640,RingCentral,Sales Support,2022-01-03,593,91,0.868,8.5,3.24,0.985,0.926,74.3,0.122,True
+AGT-0391,Elizabeth Gonzalez,LOC-0535,Five9,Escalations,2025-04-10,234,93,0.704,6.9,3.25,0.868,0.872,76.1,0.027,True
+AGT-0392,Karen Johnson,LOC-0606,Avaya,Technical,2020-06-06,295,85,0.552,6.6,3.68,0.88,0.674,92.0,0.127,True
+AGT-0393,David Gonzalez,LOC-0188,Five9,Technical,2024-03-10,407,116,0.848,7.7,3.54,0.887,0.93,91.2,0.115,True
+AGT-0394,Michael Gonzalez,LOC-0636,Five9,Escalations,2024-08-21,375,108,0.867,11.7,3.87,0.935,0.908,70.4,0.032,True
+AGT-0395,Maria Jones,LOC-0621,Avaya,Billing,2022-08-25,233,64,0.58,10.0,3.13,0.951,0.683,84.7,0.12,True
+AGT-0396,David Martin,LOC-0168,RingCentral,Sales Support,2019-08-17,410,101,0.684,6.3,3.37,0.832,0.754,96.7,0.034,True
+AGT-0397,David Williams,LOC-0502,Five9,Technical,2025-06-02,283,86,0.586,6.3,4.16,0.877,0.764,76.2,0.093,True
+AGT-0398,Robert Lopez,LOC-0478,Five9,Billing,2023-04-11,210,51,0.731,6.7,4.42,0.878,0.915,76.4,0.078,True
+AGT-0399,Richard Johnson,LOC-0049,RingCentral,Escalations,2024-11-20,181,64,0.69,10.0,3.51,0.955,0.931,92.0,0.123,True
+AGT-0400,Elizabeth Anderson,LOC-0678,Avaya,Technical,2025-07-08,422,115,0.685,6.0,3.12,0.93,0.707,91.7,0.131,True
+AGT-0401,Thomas Wilson,LOC-0122,RingCentral,Sales Support,2020-05-11,564,95,0.715,6.5,4.02,0.989,0.782,72.0,0.135,False
+AGT-0402,Elizabeth Smith,LOC-0394,Avaya,Escalations,2025-04-06,557,69,0.737,6.5,4.79,0.986,0.675,89.7,0.11,True
+AGT-0403,Jennifer Martinez,LOC-0080,Five9,Technical,2019-10-21,327,53,0.745,7.5,3.94,0.97,0.751,83.3,0.138,True
+AGT-0404,Jennifer Hernandez,LOC-0445,Avaya,Technical,2023-02-23,485,101,0.759,5.7,4.25,0.976,0.655,76.0,0.039,True
+AGT-0405,Richard Hernandez,LOC-0587,Five9,Sales Support,2021-08-13,227,97,0.589,9.6,3.46,0.823,0.707,79.4,0.053,True
+AGT-0406,Thomas Lopez,LOC-0592,RingCentral,Patient Services,2020-09-11,490,32,0.851,4.5,3.14,0.802,0.823,84.7,0.058,True
+AGT-0407,Jennifer Jones,LOC-0654,RingCentral,Escalations,2023-06-07,451,65,0.704,6.1,4.38,0.872,0.725,74.7,0.116,True
+AGT-0408,Robert Davis,LOC-0455,Five9,Technical,2019-01-22,481,64,0.623,8.3,4.14,0.911,0.879,81.5,0.102,True
+AGT-0409,Karen Davis,LOC-0675,RingCentral,Patient Services,2020-03-16,261,116,0.72,6.2,4.43,0.919,0.629,81.6,0.082,True
+AGT-0410,David Garcia,LOC-0547,Avaya,Sales Support,2022-10-22,299,69,0.621,6.0,3.35,0.936,0.673,74.6,0.054,True
+AGT-0411,Lisa Smith,LOC-0088,Avaya,Escalations,2019-11-25,493,74,0.799,11.3,4.31,0.975,0.723,85.6,0.045,True
+AGT-0412,Jennifer Lopez,LOC-0641,Avaya,Patient Services,2019-11-18,542,60,0.592,9.5,3.8,0.858,0.87,75.8,0.072,True
+AGT-0413,Nancy Smith,LOC-0219,Avaya,Patient Services,2019-12-23,578,50,0.708,4.1,3.82,0.86,0.803,94.6,0.112,True
+AGT-0414,Elizabeth Lopez,LOC-0064,Avaya,Technical,2019-09-16,407,31,0.914,6.2,4.53,0.812,0.773,86.0,0.075,True
+AGT-0415,Thomas Moore,LOC-0415,RingCentral,Escalations,2025-10-17,249,101,0.583,9.9,4.05,0.968,0.626,98.6,0.03,True
+AGT-0416,Karen Lopez,LOC-0447,RingCentral,Technical,2023-12-20,345,36,0.675,5.6,3.19,0.943,0.778,92.7,0.135,True
+AGT-0417,Karen Garcia,LOC-0654,Avaya,Escalations,2024-02-18,548,81,0.757,7.2,4.58,0.914,0.849,76.9,0.091,True
+AGT-0418,Richard Wilson,LOC-0528,RingCentral,Sales Support,2024-11-30,501,114,0.916,8.7,4.12,0.943,0.783,95.4,0.038,True
+AGT-0419,Margaret Thomas,LOC-0118,RingCentral,Billing,2020-01-03,420,76,0.69,8.1,3.16,0.808,0.722,78.2,0.039,True
+AGT-0420,Sarah Taylor,LOC-0007,RingCentral,Sales Support,2020-10-24,596,107,0.69,11.8,4.53,0.825,0.736,85.1,0.115,True
+AGT-0421,Joseph Williams,LOC-0194,RingCentral,Sales Support,2021-12-28,266,59,0.725,11.9,4.65,0.906,0.616,94.1,0.063,True
+AGT-0422,Maria Thomas,LOC-0608,Avaya,Technical,2025-06-11,460,90,0.669,7.0,3.68,0.858,0.7,86.3,0.035,True
+AGT-0423,Jennifer Martin,LOC-0129,Avaya,Escalations,2023-12-25,375,95,0.693,6.3,4.18,0.884,0.689,95.0,0.149,True
+AGT-0424,Sarah Williams,LOC-0471,Five9,Sales Support,2019-01-14,576,120,0.901,5.0,3.53,0.902,0.627,90.3,0.062,True
+AGT-0425,Nancy Garcia,LOC-0561,Avaya,Technical,2020-11-19,308,105,0.603,11.0,4.78,0.825,0.65,98.7,0.033,True
+AGT-0426,Robert Martin,LOC-0399,Five9,Billing,2022-08-17,581,57,0.654,9.2,3.93,0.89,0.787,73.9,0.074,False
+AGT-0427,Joseph Taylor,LOC-0125,Avaya,Billing,2023-07-29,408,60,0.873,8.1,4.01,0.819,0.665,74.2,0.037,True
+AGT-0428,David Rodriguez,LOC-0241,Five9,Billing,2024-02-08,344,117,0.78,5.2,3.01,0.845,0.715,94.4,0.129,True
+AGT-0429,Maria Garcia,LOC-0077,RingCentral,Escalations,2023-03-30,520,41,0.713,4.7,4.79,0.859,0.767,99.9,0.117,True
+AGT-0430,Robert Jones,LOC-0422,RingCentral,Sales Support,2021-02-28,399,79,0.586,6.8,3.0,0.828,0.774,92.8,0.12,True
+AGT-0431,Nancy Johnson,LOC-0324,Avaya,Patient Services,2020-02-03,592,71,0.706,10.9,4.63,0.829,0.742,73.6,0.119,True
+AGT-0432,Joseph Rodriguez,LOC-0322,RingCentral,Escalations,2024-01-03,319,52,0.696,9.5,4.47,0.893,0.703,98.2,0.022,True
+AGT-0433,Linda Wilson,LOC-0422,Avaya,Billing,2020-04-30,572,46,0.763,11.8,3.45,0.956,0.73,88.6,0.092,False
+AGT-0434,Jennifer Johnson,LOC-0391,Five9,Escalations,2021-03-15,247,71,0.61,7.1,3.72,0.937,0.63,91.7,0.14,True
+AGT-0435,Linda Brown,LOC-0403,Five9,Technical,2021-04-27,430,104,0.729,5.1,4.02,0.806,0.787,83.8,0.15,True
+AGT-0436,Margaret Thomas,LOC-0694,Five9,Sales Support,2019-06-11,352,84,0.74,11.6,4.02,0.881,0.736,93.9,0.097,True
+AGT-0437,Karen Thomas,LOC-0621,Avaya,Technical,2024-02-29,357,109,0.628,8.2,3.19,0.972,0.698,90.7,0.07,True
+AGT-0438,Robert Anderson,LOC-0648,Five9,Escalations,2022-09-28,275,89,0.623,7.4,4.83,0.902,0.673,97.0,0.148,True
+AGT-0439,Nancy Williams,LOC-0325,Five9,Sales Support,2023-03-09,185,79,0.794,11.7,3.54,0.829,0.73,86.8,0.134,True
+AGT-0440,Karen Johnson,LOC-0311,Avaya,Billing,2020-09-09,250,120,0.907,9.3,3.42,0.936,0.847,90.2,0.062,True
+AGT-0441,Karen Brown,LOC-0269,Avaya,Escalations,2019-01-16,562,40,0.883,11.4,4.82,0.871,0.858,95.5,0.139,True
+AGT-0442,Joseph Hernandez,LOC-0679,Avaya,Sales Support,2020-10-14,483,68,0.886,8.2,3.5,0.916,0.639,80.2,0.052,True
+AGT-0443,Elizabeth Martin,LOC-0361,RingCentral,Escalations,2024-06-17,424,107,0.729,5.6,4.47,0.922,0.643,77.4,0.051,True
+AGT-0444,Susan Martin,LOC-0055,Avaya,Patient Services,2025-09-21,586,57,0.66,7.1,3.09,0.895,0.762,90.4,0.118,False
+AGT-0445,Karen Anderson,LOC-0199,Avaya,Technical,2020-10-02,187,102,0.562,4.1,4.06,0.943,0.613,73.0,0.076,True
+AGT-0446,Karen Williams,LOC-0086,Five9,Technical,2022-06-16,528,87,0.639,4.4,3.17,0.941,0.754,76.1,0.092,False
+AGT-0447,Lisa Brown,LOC-0395,RingCentral,Escalations,2025-01-08,355,32,0.629,7.3,3.26,0.801,0.687,76.7,0.047,True
+AGT-0448,Maria Davis,LOC-0102,RingCentral,Billing,2021-02-23,180,34,0.574,11.0,4.04,0.922,0.936,98.5,0.035,True
+AGT-0449,Richard Davis,LOC-0351,RingCentral,Patient Services,2021-02-01,331,116,0.899,7.5,4.45,0.864,0.908,84.1,0.105,True
+AGT-0450,Robert Lopez,LOC-0385,Avaya,Patient Services,2022-08-08,502,100,0.664,6.4,3.26,0.939,0.905,76.2,0.124,True
+AGT-0451,Jennifer Taylor,LOC-0683,Five9,Technical,2019-02-24,592,65,0.855,10.1,4.18,0.917,0.627,81.5,0.068,True
+AGT-0452,Thomas Gonzalez,LOC-0447,Avaya,Patient Services,2024-02-14,524,60,0.731,10.7,4.35,0.987,0.838,82.4,0.059,True
+AGT-0453,Maria Gonzalez,LOC-0584,Avaya,Escalations,2025-05-20,439,57,0.68,11.9,4.18,0.966,0.658,90.3,0.129,True
+AGT-0454,James Gonzalez,LOC-0091,Avaya,Patient Services,2019-12-23,536,32,0.894,11.4,3.06,0.974,0.885,98.6,0.145,True
+AGT-0455,Michael Moore,LOC-0289,Five9,Sales Support,2021-01-29,365,106,0.742,7.2,4.09,0.887,0.787,88.2,0.113,True
+AGT-0456,William Smith,LOC-0656,Five9,Technical,2023-03-04,475,34,0.917,6.1,4.43,0.855,0.928,84.3,0.026,True
+AGT-0457,Michael Martinez,LOC-0030,RingCentral,Patient Services,2020-04-17,422,87,0.689,6.3,4.01,0.856,0.825,89.8,0.131,True
+AGT-0458,Margaret Taylor,LOC-0300,Avaya,Technical,2025-02-13,230,83,0.689,11.8,3.54,0.884,0.618,83.1,0.024,True
+AGT-0459,William Brown,LOC-0380,RingCentral,Patient Services,2019-03-22,191,78,0.559,11.7,3.12,0.834,0.777,92.4,0.026,True
+AGT-0460,Thomas Brown,LOC-0583,RingCentral,Patient Services,2022-06-04,508,98,0.673,11.3,4.81,0.891,0.636,92.2,0.061,True
+AGT-0461,William Miller,LOC-0268,Five9,Escalations,2021-01-28,529,117,0.693,10.6,4.76,0.969,0.795,75.4,0.132,True
+AGT-0462,Thomas Anderson,LOC-0650,RingCentral,Billing,2025-07-05,524,70,0.836,10.8,3.08,0.982,0.685,77.6,0.113,False
+AGT-0463,Margaret Anderson,LOC-0212,Avaya,Patient Services,2023-01-18,568,112,0.798,8.7,3.69,0.899,0.745,74.7,0.144,True
+AGT-0464,William Miller,LOC-0524,Five9,Escalations,2020-04-22,252,61,0.786,9.2,4.52,0.868,0.73,93.8,0.061,True
+AGT-0465,Robert Hernandez,LOC-0697,Five9,Technical,2021-01-28,398,60,0.766,11.9,4.23,0.806,0.682,92.5,0.111,True
+AGT-0466,Richard Martin,LOC-0526,Avaya,Escalations,2023-06-21,319,77,0.639,7.0,3.73,0.932,0.687,76.5,0.054,True
+AGT-0467,Jennifer Thomas,LOC-0684,Avaya,Escalations,2021-08-19,579,52,0.88,7.4,3.33,0.967,0.714,90.8,0.051,True
+AGT-0468,Michael Martinez,LOC-0200,Avaya,Escalations,2023-10-13,295,61,0.774,10.3,4.35,0.846,0.92,82.4,0.076,True
+AGT-0469,William Hernandez,LOC-0185,Five9,Technical,2025-02-14,192,55,0.588,7.2,4.16,0.846,0.715,90.4,0.111,True
+AGT-0470,Joseph Smith,LOC-0225,Avaya,Technical,2024-12-22,346,105,0.634,7.0,4.72,0.891,0.937,95.6,0.06,True
+AGT-0471,David Jackson,LOC-0386,Avaya,Technical,2025-10-03,428,71,0.615,5.2,4.51,0.839,0.865,75.5,0.149,True
+AGT-0472,Joseph Garcia,LOC-0240,RingCentral,Sales Support,2020-01-05,438,34,0.911,6.6,3.43,0.847,0.937,90.0,0.129,True
+AGT-0473,William Johnson,LOC-0523,Avaya,Technical,2024-05-18,486,68,0.63,4.6,4.87,0.885,0.821,95.9,0.125,True
+AGT-0474,William Garcia,LOC-0004,Avaya,Sales Support,2020-10-11,355,107,0.689,11.2,4.46,0.965,0.734,98.4,0.125,True
+AGT-0475,Elizabeth Taylor,LOC-0682,RingCentral,Escalations,2023-12-09,292,47,0.572,4.8,4.04,0.874,0.815,77.9,0.087,True
+AGT-0476,Lisa Martinez,LOC-0260,Five9,Escalations,2023-07-02,457,35,0.769,9.4,4.72,0.97,0.875,84.9,0.121,True
+AGT-0477,Karen Hernandez,LOC-0375,Avaya,Technical,2021-11-22,313,91,0.916,11.0,3.36,0.967,0.799,71.4,0.065,True
+AGT-0478,Maria Taylor,LOC-0442,Avaya,Billing,2019-03-03,411,46,0.719,4.9,3.17,0.888,0.876,93.2,0.031,True
+AGT-0479,Nancy Hernandez,LOC-0519,RingCentral,Escalations,2020-06-06,314,75,0.885,11.5,4.73,0.971,0.699,80.4,0.113,True
+AGT-0480,Linda Brown,LOC-0560,RingCentral,Escalations,2019-04-09,570,35,0.693,9.7,4.75,0.882,0.692,87.2,0.144,True
+AGT-0481,Richard Martin,LOC-0130,Avaya,Sales Support,2022-09-06,310,99,0.739,10.2,4.23,0.98,0.607,71.8,0.053,True
+AGT-0482,Jennifer Thomas,LOC-0394,RingCentral,Sales Support,2021-04-05,228,102,0.899,5.2,3.34,0.924,0.905,95.7,0.024,True
+AGT-0483,Jennifer Taylor,LOC-0266,RingCentral,Technical,2021-11-15,220,55,0.727,7.8,3.42,0.896,0.618,98.5,0.109,True
+AGT-0484,Joseph Martin,LOC-0259,RingCentral,Escalations,2019-11-28,461,97,0.638,4.6,3.69,0.878,0.9,98.5,0.028,True
+AGT-0485,Maria Jones,LOC-0294,Avaya,Escalations,2021-04-01,541,120,0.637,5.4,4.45,0.811,0.794,96.0,0.096,True
+AGT-0486,Jennifer Williams,LOC-0327,Avaya,Escalations,2019-07-26,448,117,0.587,11.3,3.27,0.888,0.745,96.4,0.029,True
+AGT-0487,James Martinez,LOC-0217,RingCentral,Sales Support,2024-06-02,455,82,0.565,7.2,3.51,0.801,0.846,80.5,0.085,True
+AGT-0488,Lisa Williams,LOC-0635,Five9,Escalations,2025-10-08,314,33,0.684,11.5,4.49,0.955,0.829,91.0,0.058,True
+AGT-0489,Lisa Martin,LOC-0397,Avaya,Patient Services,2025-08-07,516,75,0.885,8.9,3.69,0.955,0.744,73.1,0.131,True
+AGT-0490,William Johnson,LOC-0164,Avaya,Patient Services,2023-03-23,309,62,0.651,9.5,3.49,0.987,0.849,79.3,0.096,True
+AGT-0491,Sarah Davis,LOC-0088,Avaya,Escalations,2023-09-05,280,64,0.585,11.5,4.69,0.894,0.699,76.4,0.095,True
+AGT-0492,Margaret Davis,LOC-0635,Five9,Sales Support,2019-12-16,558,104,0.838,10.9,3.43,0.959,0.914,91.0,0.116,True
+AGT-0493,Lisa Brown,LOC-0609,Five9,Escalations,2025-07-04,463,73,0.634,4.2,3.27,0.827,0.697,96.5,0.105,True
+AGT-0494,Maria Wilson,LOC-0196,Avaya,Billing,2022-02-26,331,79,0.584,11.6,3.87,0.81,0.814,74.0,0.143,True
+AGT-0495,Susan Jackson,LOC-0659,RingCentral,Patient Services,2023-08-29,384,75,0.758,6.7,3.95,0.968,0.724,87.0,0.096,True
+AGT-0496,Elizabeth Rodriguez,LOC-0558,Five9,Sales Support,2023-06-26,241,64,0.656,8.6,3.34,0.96,0.65,84.8,0.058,True
+AGT-0497,Thomas Brown,LOC-0220,Avaya,Patient Services,2019-09-17,196,119,0.852,9.9,4.07,0.984,0.939,77.3,0.066,True
+AGT-0498,Richard Brown,LOC-0194,RingCentral,Technical,2025-11-15,261,78,0.754,9.0,4.64,0.966,0.935,99.1,0.077,True
+AGT-0499,William Anderson,LOC-0629,Avaya,Escalations,2023-07-05,352,90,0.858,8.9,4.66,0.956,0.897,97.1,0.102,True
+AGT-0500,David Thomas,LOC-0205,Five9,Billing,2022-03-25,447,96,0.707,9.1,3.15,0.98,0.69,82.0,0.084,True

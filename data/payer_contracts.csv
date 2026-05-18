@@ -1,0 +1,26 @@
+contract_id,payer_code,payer_name,plan_type,effective_date,termination_date,reimbursement_rate_pct,timely_filing_days,prior_auth_required,cmn_required,electronic_submission,contact_phone
+PC-0001,MEDICARE,Medicare Part B,HMO,2025-01-01,2026-12-31,82.3,90,False,True,True,1-800-281-8306
+PC-0002,MEDICARE,Medicare Part B,HMO,2025-01-01,2026-12-31,94.4,90,False,True,True,1-800-802-6922
+PC-0003,MEDICARE,Medicare Part B,Managed Care,2025-01-01,2026-12-31,87.0,90,False,True,True,1-800-944-6227
+PC-0004,MEDICARE,Medicare Part B,Traditional,2025-01-01,2026-12-31,79.0,365,False,True,True,1-800-711-5919
+PC-0005,MEDICARE,Medicare Part B,Traditional,2025-01-01,2026-12-31,77.8,120,True,True,True,1-800-801-3794
+PC-0006,MEDICAID,Medicaid,HMO,2025-01-01,2026-12-31,87.3,365,False,False,True,1-800-672-6314
+PC-0007,MEDICAID,Medicaid,Traditional,2025-01-01,2026-12-31,81.6,365,False,False,True,1-800-356-3327
+PC-0008,MEDICAID,Medicaid,Traditional,2025-01-01,2026-12-31,80.5,90,True,False,True,1-800-524-7249
+PC-0009,MEDICAID,Medicaid,PPO,2025-01-01,2026-12-31,80.0,90,False,False,True,1-800-877-3830
+PC-0010,MEDICAID,Medicaid,PPO,2025-01-01,2026-12-31,84.8,120,True,False,True,1-800-297-1268
+PC-0011,UHC,UnitedHealthcare,Traditional,2025-01-01,2026-12-31,81.8,180,False,False,True,1-800-402-1355
+PC-0012,UHC,UnitedHealthcare,Traditional,2025-01-01,2026-12-31,79.8,180,False,False,True,1-800-433-4112
+PC-0013,UHC,UnitedHealthcare,Traditional,2025-01-01,2026-12-31,85.2,365,False,False,True,1-800-645-3618
+PC-0014,UHC,UnitedHealthcare,Traditional,2025-01-01,2026-12-31,94.2,90,False,False,True,1-800-308-2096
+PC-0015,UHC,UnitedHealthcare,Medicare Advantage,2025-01-01,2026-12-31,87.7,180,True,False,True,1-800-440-9499
+PC-0016,AETNA,Aetna,Traditional,2025-01-01,2026-12-31,90.1,365,False,False,True,1-800-213-6046
+PC-0017,AETNA,Aetna,PPO,2025-01-01,2026-12-31,78.5,180,False,False,True,1-800-826-2996
+PC-0018,AETNA,Aetna,Managed Care,2025-01-01,2026-12-31,73.2,180,False,False,True,1-800-942-7117
+PC-0019,AETNA,Aetna,PPO,2025-01-01,2026-12-31,79.2,365,True,False,True,1-800-218-8324
+PC-0020,AETNA,Aetna,Medicare Advantage,2025-01-01,2026-12-31,80.4,120,False,False,True,1-800-904-4824
+PC-0021,BCBS,Blue Cross Blue Shield,Medicare Advantage,2025-01-01,2026-12-31,85.8,365,False,False,True,1-800-768-6582
+PC-0022,BCBS,Blue Cross Blue Shield,Managed Care,2025-01-01,2026-12-31,89.8,120,True,False,True,1-800-529-4750
+PC-0023,BCBS,Blue Cross Blue Shield,Managed Care,2025-01-01,2026-12-31,85.2,120,False,False,True,1-800-776-8696
+PC-0024,BCBS,Blue Cross Blue Shield,HMO,2025-01-01,2026-12-31,77.8,90,False,False,True,1-800-968-3430
+PC-0025,BCBS,Blue Cross Blue Shield,Managed Care,2025-01-01,2026-12-31,78.0,365,False,False,True,1-800-817-5358
