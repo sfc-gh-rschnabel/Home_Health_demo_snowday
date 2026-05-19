@@ -50,15 +50,48 @@ Creates database `HOME_HEALTH_DEMO` with four schemas, six roles (BILLING_ADMIN,
 
 ---
 
-## Step 2: Create Stages (2 minutes)
+## Step 2: Create Stages and Upload Data (5 minutes)
 
 Run `sql/02_create_stages.sql`
 
 Creates internal stages and CSV file format for data loading.
 
-Then upload data files:
+### Upload the pre-generated data files
+
+The data is already included in this repo (in the `data/` folder). You just need to clone/download the repo and upload the CSVs to your Snowflake stage:
+
+1. **Clone the repo** (if you haven't already):
+```bash
+git clone https://github.com/sfc-gh-rschnabel/Home_Health_demo_snowday.git
+cd Home_Health_demo_snowday
+```
+
+2. **Upload CSVs to stage** using SnowSQL or the Snowsight UI:
+
+**Option A - SnowSQL (command line):**
 ```sql
-PUT file:///path/to/home_health_snowday_demo/data/*.csv @HOME_HEALTH_DATA_STAGE;
+USE DATABASE HOME_HEALTH_DEMO;
+USE SCHEMA RAW_DATA;
+PUT file://./data/locations.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/payer_contracts.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/claims_submissions.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/claims_denials.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/denial_appeals.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/sales_rep_activity.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/physician_referrals.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/cms_respiratory_claims.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/call_detail_records.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/call_agent_performance.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+PUT file://./data/patient_satisfaction.csv @HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
+```
+
+**Option B - Snowsight UI:**
+1. Navigate to Data > Databases > HOME_HEALTH_DEMO > RAW_DATA > Stages > HOME_HEALTH_DATA_STAGE
+2. Click "Upload" and select all 11 CSV files from the `data/` folder
+
+3. **Verify files uploaded:**
+```sql
+LIST @HOME_HEALTH_DATA_STAGE;
 ```
 
 ---

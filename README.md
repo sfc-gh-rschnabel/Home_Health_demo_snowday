@@ -76,10 +76,13 @@ home_health_snowday_demo/
 
 ## Quick Start
 
-1. **Generate Data**: `python3 generate_home_health_datasets.py`
-2. **Run SQL Scripts**: Execute 01-14 in order in Snowsight
-3. **Deploy Dashboard**: Copy `home_health_analytics_app_sis.py` to Streamlit in Snowflake
-4. **Test Agent**: Navigate to AI & ML > Snowflake Intelligence
+1. **Clone this repo**: `git clone https://github.com/sfc-gh-rschnabel/Home_Health_demo_snowday.git`
+2. **Run SQL Scripts 01-02**: Set up environment and create stages
+3. **Upload data**: Upload the pre-generated CSVs from `data/` folder to the stage (see QUICKSTART_GUIDE for details)
+4. **Run SQL Scripts 03-14**: Load data, build pipeline, deploy AI + dashboard
+5. **Test Agent**: Navigate to AI & ML > Snowflake Intelligence
+
+> **Note**: All data files are pre-generated and included in this repo. No Python execution required.
 
 ## Data Summary
 
