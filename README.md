@@ -12,15 +12,26 @@ A comprehensive hands-on lab demonstrating Snowflake's unified data platform acr
 
 ## Snowflake Features Demonstrated
 
-| Feature | What It Does | Competitive Advantage |
-|---------|-------------|----------------------|
-| Dynamic Tables | Declarative pipeline (Bronze/Silver/Gold) | No DAGs, no notebooks, no orchestration tools |
-| Semantic View | Natural language to SQL | Native SQL object vs Power BI semantic model |
-| Cortex Search | RAG over policy documents | Built-in vs Azure AI Search + OpenAI integration |
-| Intelligence Agent | Combined Analyst + Search | Single DDL vs Copilot Studio multi-service setup |
-| Streamlit in Snowflake | Interactive dashboards | Governed data access, no external BI tool |
-| RBAC + Masking | HIPAA-compliant governance | Unified, instant vs Fabric's per-engine variation |
-| Per-second billing | Cost optimization | Auto-suspend vs Fabric's always-on capacity |
+| # | Feature | What It Does | Competitive Advantage vs Fabric/Databricks |
+|---|---------|-------------|---------------------------------------------|
+| 1 | **Dynamic Tables** | Declarative data pipeline (Bronze/Silver/Gold medallion) with automatic refresh | No DAGs, no notebooks, no orchestration tools needed |
+| 2 | **Cortex Analyst (Semantic View)** | Natural language to SQL over structured data | Native SQL object vs Power BI semantic model (separate tool/team) |
+| 3 | **Cortex Search** | RAG over unstructured policy documents | Built-in service vs Azure AI Search + OpenAI + custom code |
+| 4 | **Snowflake Intelligence Agent** | Combined Cortex Analyst + Cortex Search in one agent | Single `CREATE AGENT` DDL vs Copilot Studio multi-service weeks |
+| 5 | **Streamlit in Snowflake** | Interactive multi-tab KPI dashboard with embedded chatbot | Governed data access, no external BI tool or app hosting |
+| 6 | **Snowflake Marketplace** | CMS Medicare utilization data for market analysis (zero ETL) | No pipeline needed for third-party data vs manual ingestion |
+| 7 | **RBAC + Dynamic Data Masking** | HIPAA-compliant role-based access with instant masking on PHI | Unified, instant apply vs Fabric's 5min-2hr propagation delay |
+| 8 | **Row Access Policies** | Location-based data filtering by role | Single policy engine vs per-engine configuration |
+| 9 | **Data Classification Tags** | PHI/PII/FINANCIAL tagging for governance audits | Native tags vs external catalog tools |
+| 10 | **Time Travel + Access History** | 90-day audit trail for Medicare compliance | 90 days vs Fabric's 30 days; full query-level audit |
+| 11 | **Multi-Cluster Warehouses** | Auto-scale 1-5 clusters for concurrent users | Instant elastic scaling vs capacity planning |
+| 12 | **Per-Second Billing + Auto-Suspend** | Zero cost when idle (60s auto-suspend) | Per-second vs Fabric's capacity-based F-SKU (pay when idle) |
+| 13 | **Resource Monitors** | Credit quotas with automatic suspend triggers | Built-in cost governance vs manual monitoring |
+| 14 | **Semi-Structured Data (VARIANT)** | Native handling of EDI 835/837, JSON CDRs from phone systems | No flattening pipelines vs manual parsing in Fabric |
+| 15 | **COPY INTO (Bulk Loading)** | Parallel data loading with auto-scaling | Simpler than Data Factory copy activities + linked services |
+| 16 | **Internal Stages** | Secure file staging without external storage | No S3/ADLS configuration required for demo |
+| 17 | **Star Schema Transforms** | Dimensional modeling with SQL | Same platform for ELT vs separate compute engines |
+| 18 | **Cross-Domain Correlation** | Gold-layer tables linking denials → calls → sales | Only possible with all data on one governed platform |
 
 ## Project Structure
 

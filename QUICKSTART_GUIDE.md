@@ -130,6 +130,46 @@ Run scripts 08, 09, 10:
 
 ---
 
+## Step 8.5: Snowflake Marketplace - CMS Medicare Data (5 minutes)
+
+**This demonstrates zero-ETL third-party data enrichment.**
+
+In `09_sales_analytics.sql`, the market penetration analysis blends internal referral data with CMS Medicare respiratory claims data. In production, this data comes directly from **Snowflake Marketplace** providers:
+
+### Available Marketplace Datasets for DME/Home Health:
+- **Cybersyn**: CMS Medicare Provider Utilization & Payment Data
+- **Definitive Healthcare**: Physician prescribing patterns, hospital discharge volumes
+- **IQVIA**: DME market sizing and competitive intelligence
+- **Claritas**: Demographic data for territory optimization
+
+### How It Works (Production):
+```sql
+-- 1. Get the listing from Marketplace (one-click, no ETL)
+-- Navigate: Data Products > Marketplace > Search "CMS Medicare"
+-- Click "Get" on Cybersyn or Definitive Healthcare listing
+
+-- 2. Query shared data directly (zero-copy, always fresh)
+SELECT * FROM CYBERSYN.CMS.DMEPOS_UTILIZATION
+WHERE hcpcs_code IN ('E0431','E0601','E0470')
+  AND state = 'FL';
+
+-- 3. Join with internal data for market penetration
+SELECT
+    cms.state,
+    cms.total_claims as market_size,
+    internal.our_referrals,
+    ROUND(internal.our_referrals * 100.0 / cms.total_claims, 2) as market_share_pct
+FROM MARKETPLACE_CMS_DATA cms
+JOIN INTERNAL_REFERRALS internal ON cms.state = internal.state;
+```
+
+> **For this demo**, we pre-loaded simulated CMS data (`cms_respiratory_claims.csv`) to avoid requiring Marketplace access. In production, this data stays live and auto-updates quarterly.
+
+> **vs Fabric**: Must build custom ingestion pipelines for government data sources. No equivalent to zero-copy data sharing.
+> **vs Databricks**: Delta Sharing exists but has limited provider ecosystem. No CMS data readily available.
+
+---
+
 ## Step 9: Create Semantic View (5 minutes)
 
 Run `sql/11_semantic_view.sql`
