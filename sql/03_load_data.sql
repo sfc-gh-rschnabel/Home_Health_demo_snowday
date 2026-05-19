@@ -27,8 +27,7 @@ CREATE OR REPLACE TABLE LOCATIONS (
     open_date DATE,
     is_active BOOLEAN,
     square_footage INT,
-    employee_count INT,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    employee_count INT
 );
 
 CREATE OR REPLACE TABLE PAYER_CONTRACTS (
@@ -43,8 +42,7 @@ CREATE OR REPLACE TABLE PAYER_CONTRACTS (
     prior_auth_required BOOLEAN,
     cmn_required BOOLEAN,
     electronic_submission BOOLEAN,
-    contact_phone VARCHAR(20),
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    contact_phone VARCHAR(20)
 );
 
 CREATE OR REPLACE TABLE CLAIMS_SUBMISSIONS (
@@ -71,8 +69,7 @@ CREATE OR REPLACE TABLE CLAIMS_SUBMISSIONS (
     adjudication_date DATE,
     paid_amount FLOAT,
     has_cmn BOOLEAN,
-    prior_auth_obtained BOOLEAN,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    prior_auth_obtained BOOLEAN
 );
 
 CREATE OR REPLACE TABLE CLAIMS_DENIALS (
@@ -96,8 +93,7 @@ CREATE OR REPLACE TABLE CLAIMS_DENIALS (
     status VARCHAR(20),
     days_to_resolve INT,
     is_repeat_denial BOOLEAN,
-    original_claim_clean BOOLEAN,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    original_claim_clean BOOLEAN
 );
 
 CREATE OR REPLACE TABLE DENIAL_APPEALS (
@@ -115,8 +111,7 @@ CREATE OR REPLACE TABLE DENIAL_APPEALS (
     recovered_amount FLOAT,
     appeal_specialist VARCHAR(100),
     turnaround_days INT,
-    payer_response_notes VARCHAR(500),
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    payer_response_notes VARCHAR(500)
 );
 
 CREATE OR REPLACE TABLE SALES_REP_ACTIVITY (
@@ -136,8 +131,7 @@ CREATE OR REPLACE TABLE SALES_REP_ACTIVITY (
     referral_generated BOOLEAN,
     notes VARCHAR(500),
     duration_minutes INT,
-    miles_driven FLOAT,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    miles_driven FLOAT
 );
 
 CREATE OR REPLACE TABLE PHYSICIAN_REFERRALS (
@@ -157,8 +151,7 @@ CREATE OR REPLACE TABLE PHYSICIAN_REFERRALS (
     status VARCHAR(20),
     days_to_setup INT,
     revenue FLOAT,
-    is_new_physician BOOLEAN,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    is_new_physician BOOLEAN
 );
 
 CREATE OR REPLACE TABLE CMS_RESPIRATORY_CLAIMS (
@@ -175,8 +168,7 @@ CREATE OR REPLACE TABLE CMS_RESPIRATORY_CLAIMS (
     total_paid FLOAT,
     provider_type VARCHAR(50),
     home_health_share BOOLEAN,
-    competitor_count INT,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    competitor_count INT
 );
 
 CREATE OR REPLACE TABLE CALL_DETAIL_RECORDS (
@@ -201,8 +193,7 @@ CREATE OR REPLACE TABLE CALL_DETAIL_RECORDS (
     first_call_resolution BOOLEAN,
     disposition VARCHAR(30),
     satisfaction_score INT,
-    recording_available BOOLEAN,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    recording_available BOOLEAN
 );
 
 CREATE OR REPLACE TABLE CALL_AGENT_PERFORMANCE (
@@ -221,8 +212,7 @@ CREATE OR REPLACE TABLE CALL_AGENT_PERFORMANCE (
     utilization_rate FLOAT,
     quality_score FLOAT,
     escalation_rate FLOAT,
-    is_active BOOLEAN,
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    is_active BOOLEAN
 );
 
 CREATE OR REPLACE TABLE PATIENT_SATISFACTION (
@@ -238,8 +228,7 @@ CREATE OR REPLACE TABLE PATIENT_SATISFACTION (
     wait_time_acceptable BOOLEAN,
     would_recommend BOOLEAN,
     comments VARCHAR(500),
-    location_id VARCHAR(10),
-    load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+    location_id VARCHAR(10)
 );
 
 -- ============================================================================

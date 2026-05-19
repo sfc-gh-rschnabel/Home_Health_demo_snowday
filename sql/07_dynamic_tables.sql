@@ -46,8 +46,7 @@ SELECT
     prior_auth_obtained,
     DATEDIFF(day, submission_date, COALESCE(adjudication_date, CURRENT_DATE())) as days_in_ar,
     CASE WHEN claim_status = 'PAID' AND paid_amount > 0 THEN TRUE ELSE FALSE END as is_clean_claim,
-    CASE WHEN claim_status = 'DENIED' THEN TRUE ELSE FALSE END as is_denied,
-    load_timestamp
+    CASE WHEN claim_status = 'DENIED' THEN TRUE ELSE FALSE END as is_denied
 FROM RAW_DATA.CLAIMS_SUBMISSIONS
 WHERE claim_id IS NOT NULL AND submission_date IS NOT NULL;
 
@@ -76,8 +75,7 @@ SELECT
     UPPER(TRIM(status)) as status,
     days_to_resolve,
     is_repeat_denial,
-    original_claim_clean,
-    load_timestamp
+    original_claim_clean
 FROM RAW_DATA.CLAIMS_DENIALS
 WHERE denial_id IS NOT NULL;
 
@@ -101,8 +99,7 @@ SELECT
     INITCAP(TRIM(outcome)) as outcome,
     referral_generated,
     duration_minutes,
-    miles_driven,
-    load_timestamp
+    miles_driven
 FROM RAW_DATA.SALES_REP_ACTIVITY
 WHERE activity_id IS NOT NULL AND activity_date IS NOT NULL;
 
@@ -135,8 +132,7 @@ SELECT
         WHEN wait_time_seconds <= 20 THEN 'WITHIN_SLA'
         WHEN wait_time_seconds <= 60 THEN 'NEAR_SLA'
         ELSE 'SLA_BREACH'
-    END as sla_status,
-    load_timestamp
+    END as sla_status
 FROM RAW_DATA.CALL_DETAIL_RECORDS
 WHERE cdr_id IS NOT NULL;
 
