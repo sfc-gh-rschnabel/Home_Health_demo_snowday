@@ -218,11 +218,30 @@ Creates `SV_HOME_HEALTH_OPERATIONS` - a single semantic view covering all three 
 
 ---
 
-## Step 10: Create Cortex Search Service (5 minutes)
+## Step 10: Create Cortex Search Service (10 minutes)
 
 Run `sql/12_cortex_search_service.sql`
 
-Loads 10 policy documents (28 chunks) and creates a Cortex Search service for RAG-based document retrieval. Covers claims submission rules, denial appeal procedures, Medicare CMN requirements, call center SLAs, and more.
+First, upload the policy documents from the `documents/` folder to the stage:
+```sql
+PUT file://./documents/01_claims_submission_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/02_denial_appeal_procedures.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/03_medicare_cmn_requirements.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/04_equipment_authorization_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/05_call_center_sla_standards.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/06_sales_territory_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/07_hipaa_compliance_dme.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/08_payer_billing_rules.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/09_quality_metrics_definitions.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/10_referral_management_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+```
+
+Then run the SQL script which:
+1. Reads the markdown files from stage
+2. Chunks them into searchable segments (~2000 chars each)
+3. Creates the Cortex Search service over the chunked content
+
+This demonstrates loading **real documents** (not inline SQL inserts) and creating enterprise search over them.
 
 > **vs Fabric**: Requires Azure AI Search resource + indexer + embeddings + custom code.
 > **vs Databricks**: Requires Vector Search index + embedding model + serving endpoint.
