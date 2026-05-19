@@ -1,4 +1,4 @@
-# Lincare Claims Submission Guidelines
+# Home Health Claims Submission Guidelines
 
 ## Policy Number: CLM-001
 ## Department: Revenue Cycle Management
@@ -6,7 +6,7 @@
 ## Last Reviewed: March 15, 2026
 
 ## Purpose
-To establish standardized procedures for the submission of Durable Medical Equipment (DME) claims to ensure maximum first-pass acceptance rates, regulatory compliance, and timely reimbursement across all 700+ Lincare operating centers.
+To establish standardized procedures for the submission of Durable Medical Equipment (DME) claims to ensure maximum first-pass acceptance rates, regulatory compliance, and timely reimbursement across all 700+ Home Health operating centers.
 
 ## Scope
 This policy applies to all billing personnel, intake coordinators, and branch managers involved in claims submission for Medicare, Medicaid, and commercial payer claims.
@@ -44,7 +44,7 @@ A clean claim must contain:
 6. Date of service matching delivery/setup date
 7. Certificate of Medical Necessity (if applicable) with all required fields completed
 8. Prior authorization number (when required by payer)
-9. Lincare NPI and taxonomy code
+9. Home Health NPI and taxonomy code
 
 ## Submission Timelines
 - Medicare: Submit within 12 months of date of service (timely filing limit is 365 days)

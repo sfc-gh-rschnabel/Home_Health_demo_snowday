@@ -6,7 +6,7 @@
 ## Last Reviewed: March 10, 2026
 
 ## Purpose
-To define service level targets, quality standards, and operational metrics for Lincare's multi-site contact center operations spanning 700+ locations and multiple phone system platforms (Avaya, Five9, RingCentral).
+To define service level targets, quality standards, and operational metrics for Home Health's multi-site contact center operations spanning 700+ locations and multiple phone system platforms (Avaya, Five9, RingCentral).
 
 ## Service Level Targets
 

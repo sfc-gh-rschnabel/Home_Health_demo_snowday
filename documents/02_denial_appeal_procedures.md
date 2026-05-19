@@ -1,4 +1,4 @@
-# Lincare Denial Appeal Procedures
+# Home Health Denial Appeal Procedures
 
 ## Policy Number: DEN-001
 ## Department: Revenue Cycle Management - Appeals Unit

@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Compute Scaling
+-- Home Health SnowDay Demo - Compute Scaling
 -- ============================================================================
 -- Demonstrates Snowflake's elastic compute advantages
 --
@@ -10,7 +10,7 @@
 -- ============================================================================
 
 USE ROLE ACCOUNTADMIN;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 
 -- ============================================================================
 -- 1. WORKLOAD-SPECIFIC WAREHOUSES
@@ -19,14 +19,14 @@ USE DATABASE LINCARE_DEMO;
 -- This is impossible in Fabric (shared capacity = noisy neighbor)
 
 -- ETL Warehouse: Bursts during nightly loads, suspends between
-ALTER WAREHOUSE LINCARE_LOAD_WH SET
+ALTER WAREHOUSE HOME_HEALTH_LOAD_WH SET
     WAREHOUSE_SIZE = 'MEDIUM'
     AUTO_SUSPEND = 60
     AUTO_RESUME = TRUE
     COMMENT = 'ETL: Medium for batch loads, auto-suspends after 60s idle. Cost: ~$0 when idle.';
 
 -- Analytics Warehouse: Multi-cluster for concurrent dashboards
-ALTER WAREHOUSE LINCARE_ANALYTICS_WH SET
+ALTER WAREHOUSE HOME_HEALTH_ANALYTICS_WH SET
     WAREHOUSE_SIZE = 'LARGE'
     AUTO_SUSPEND = 300
     AUTO_RESUME = TRUE
@@ -36,7 +36,7 @@ ALTER WAREHOUSE LINCARE_ANALYTICS_WH SET
     COMMENT = 'Analytics: Auto-scales 1-5 clusters for concurrent users. Fabric equivalent requires manual capacity planning.';
 
 -- Ad-hoc Warehouse: Economy scaling for exploration
-ALTER WAREHOUSE LINCARE_ADHOC_WH SET
+ALTER WAREHOUSE HOME_HEALTH_ADHOC_WH SET
     WAREHOUSE_SIZE = 'SMALL'
     AUTO_SUSPEND = 60
     AUTO_RESUME = TRUE
@@ -49,7 +49,7 @@ ALTER WAREHOUSE LINCARE_ADHOC_WH SET
 -- 2. RESOURCE MONITORS (Cost Control)
 -- ============================================================================
 
-CREATE OR REPLACE RESOURCE MONITOR LINCARE_MONTHLY_LIMIT
+CREATE OR REPLACE RESOURCE MONITOR HOME_HEALTH_MONTHLY_LIMIT
 WITH
     CREDIT_QUOTA = 500
     FREQUENCY = MONTHLY
@@ -59,16 +59,16 @@ WITH
         ON 90 PERCENT DO SUSPEND
         ON 100 PERCENT DO SUSPEND_IMMEDIATE;
 
-ALTER WAREHOUSE LINCARE_LOAD_WH SET RESOURCE_MONITOR = LINCARE_MONTHLY_LIMIT;
-ALTER WAREHOUSE LINCARE_ANALYTICS_WH SET RESOURCE_MONITOR = LINCARE_MONTHLY_LIMIT;
-ALTER WAREHOUSE LINCARE_ADHOC_WH SET RESOURCE_MONITOR = LINCARE_MONTHLY_LIMIT;
+ALTER WAREHOUSE HOME_HEALTH_LOAD_WH SET RESOURCE_MONITOR = HOME_HEALTH_MONTHLY_LIMIT;
+ALTER WAREHOUSE HOME_HEALTH_ANALYTICS_WH SET RESOURCE_MONITOR = HOME_HEALTH_MONTHLY_LIMIT;
+ALTER WAREHOUSE HOME_HEALTH_ADHOC_WH SET RESOURCE_MONITOR = HOME_HEALTH_MONTHLY_LIMIT;
 
 -- ============================================================================
 -- 3. DEMONSTRATE SCALING (Talk Track)
 -- ============================================================================
 
 -- Show current warehouses
-SHOW WAREHOUSES LIKE 'LINCARE%';
+SHOW WAREHOUSES LIKE 'HOME_HEALTH%';
 
 -- Key talking points for demo:
 -- 1. "Notice AUTO_SUSPEND = 60. After 60 seconds of no queries, compute stops billing.

@@ -27,13 +27,13 @@ To standardize the referral intake process, physician onboarding workflow, and o
 
 ### Step 1: Qualification (Day 1-5)
 - Verify physician NPI is active and enrolled in PECOS (for Medicare referrals)
-- Confirm specialty aligns with Lincare's equipment portfolio
-- Check geographic proximity to Lincare service area
+- Confirm specialty aligns with Home Health's equipment portfolio
+- Check geographic proximity to Home Health service area
 - Research current DME supplier relationship (competitive intelligence)
 - Assign to territory rep based on location
 
 ### Step 2: Initial Contact (Day 5-10)
-- Sales rep introduces Lincare capabilities and service differentiators
+- Sales rep introduces Home Health capabilities and service differentiators
 - Provide welcome packet: catalog, referral forms, contact information
 - Identify key office contact (office manager, medical assistant, referral coordinator)
 - Offer lunch-and-learn or in-service presentation
@@ -70,7 +70,7 @@ To standardize the referral intake process, physician onboarding workflow, and o
 - Compliance documentation complete: Within 48 hours
 
 ## Referral Leakage Prevention
-Referral leakage occurs when a physician intends to refer to Lincare but the referral is lost. Common causes and prevention:
+Referral leakage occurs when a physician intends to refer to Home Health but the referral is lost. Common causes and prevention:
 - Incomplete referral form → Dedicated intake team calls physician office within 2 hours
 - Authorization delays → Proactive payer follow-up; escalation at 48 hours
 - Patient non-response → 3-attempt contact protocol (phone, then text, then mail)

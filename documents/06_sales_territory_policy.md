@@ -6,7 +6,7 @@
 ## Last Reviewed: February 15, 2026
 
 ## Purpose
-To establish fair and transparent territory assignment, quota methodology, and performance expectations for Lincare's 150+ sales representatives who market to physicians, discharge planners, and healthcare facilities.
+To establish fair and transparent territory assignment, quota methodology, and performance expectations for Home Health's 150+ sales representatives who market to physicians, discharge planners, and healthcare facilities.
 
 ## Territory Structure
 
@@ -18,7 +18,7 @@ To establish fair and transparent territory assignment, quota methodology, and p
 ### Territory Assignment Criteria
 Territories are balanced based on:
 1. Total Addressable Market (TAM): Number of respiratory/DME Medicare beneficiaries in area
-2. Existing Lincare presence: Number of active referral sources
+2. Existing Home Health presence: Number of active referral sources
 3. Competitive density: Number of competing DME suppliers
 4. Drive time: Maximum 90-minute radius from home base
 5. Account concentration: No territory should have >40% of revenue from a single account
@@ -54,7 +54,7 @@ Territories are balanced based on:
 1. Lead-to-Referral Conversion Rate: % of physician contacts resulting in referrals (target: 12-18%)
 2. Referral Source Value: Average monthly revenue per active referral source
 3. New Physician Acquisitions: Net new referring providers per quarter
-4. Market Penetration Rate: Lincare referrals vs. total CMS respiratory claims in territory
+4. Market Penetration Rate: Home Health referrals vs. total CMS respiratory claims in territory
 5. Activity Completion Rate: Actual vs. planned activities
 6. Cost per Acquisition: Total sales cost / new referring provider acquired
 
@@ -67,7 +67,7 @@ Territories are balanced based on:
 
 ## CMS Market Data Utilization
 Sales managers use CMS Medicare utilization data to:
-- Identify high-volume respiratory prescribers not currently referring to Lincare
+- Identify high-volume respiratory prescribers not currently referring to Home Health
 - Measure true market penetration against total available referrals
 - Prioritize territories for expansion or additional rep coverage
 - Validate quota reasonableness based on actual market size

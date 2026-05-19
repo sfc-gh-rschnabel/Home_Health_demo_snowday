@@ -1,5 +1,5 @@
 """
-Lincare SnowDay Demo - Dataset Generation Script
+Home Health SnowDay Demo - Dataset Generation Script
 Generates realistic DME healthcare data for Q1 2026 (Jan-Mar 2026)
 covering 3 use cases: Denials Reduction, Sales Analytics, Call Center Consolidation
 """
@@ -136,7 +136,7 @@ def generate_locations():
         region = random.choice(REGIONS)
         records.append({
             'location_id': f"LOC-{i+1:04d}",
-            'location_name': f"Lincare {city} #{random.randint(1,5)}",
+            'location_name': f"Home Health {city} #{random.randint(1,5)}",
             'address': f"{random.randint(100,9999)} {random.choice(['Main','Oak','Pine','Elm','Cedar','Market','Health'])} {random.choice(['St','Ave','Blvd','Dr','Rd'])}",
             'city': city,
             'state': state,
@@ -378,7 +378,7 @@ def generate_cms_respiratory_claims():
             'total_allowed': round(random.uniform(500, 50000), 2),
             'total_paid': round(random.uniform(400, 45000), 2),
             'provider_type': random.choice(['DME Supplier','Hospital Outpatient','Physician Office','Home Health Agency']),
-            'lincare_share': random.choices([True, False], weights=[0.35, 0.65])[0],
+            'home_health_share': random.choices([True, False], weights=[0.35, 0.65])[0],
             'competitor_count': random.randint(1, 8),
         })
     save_to_csv(records, 'cms_respiratory_claims.csv', list(records[0].keys()))
@@ -515,7 +515,7 @@ def generate_patient_satisfaction():
 
 def main():
     print("=" * 60)
-    print("LINCARE SNOWDAY DEMO - DATA GENERATION")
+    print("HOME_HEALTH SNOWDAY DEMO - DATA GENERATION")
     print("=" * 60)
     print(f"Date Range: Q1 2026 (Jan 1 - Mar 31, 2026)")
     print(f"Output Directory: {DATA_DIR}")

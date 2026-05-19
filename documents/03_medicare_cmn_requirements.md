@@ -6,7 +6,7 @@
 ## Last Reviewed: March 1, 2026
 
 ## Purpose
-To ensure all Certificates of Medical Necessity are completed accurately and completely before claim submission, reducing CMN-related denials which represent approximately 25% of all Lincare Medicare denials.
+To ensure all Certificates of Medical Necessity are completed accurately and completely before claim submission, reducing CMN-related denials which represent approximately 25% of all Home Health Medicare denials.
 
 ## CMN Form Types
 
@@ -66,7 +66,7 @@ Key Requirements:
 7. Submit claim with CMN reference number
 
 ## Physician Education Initiative
-Lincare provides CMN completion training to referring physicians to reduce rejection rates:
+Home Health provides CMN completion training to referring physicians to reduce rejection rates:
 - Initial onboarding packet with common completion errors
 - Quarterly newsletter highlighting top denial reasons
 - Dedicated CMN support line: 1-800-xxx-xxxx option 4

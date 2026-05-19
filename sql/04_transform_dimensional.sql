@@ -1,13 +1,13 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Dimensional Model Transformations
+-- Home Health SnowDay Demo - Dimensional Model Transformations
 -- ============================================================================
 -- Creates star schema dimensional model from raw data
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA TRANSFORMED;
-USE WAREHOUSE LINCARE_ANALYTICS_WH;
+USE WAREHOUSE HOME_HEALTH_ANALYTICS_WH;
 
 -- ============================================================================
 -- DIMENSION TABLES

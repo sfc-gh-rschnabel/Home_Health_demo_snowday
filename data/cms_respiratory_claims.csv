@@ -1,4 +1,4 @@
-cms_claim_id,reporting_quarter,state,city,zip_code,hcpcs_code,equipment_category,beneficiary_count,total_claims,total_allowed,total_paid,provider_type,lincare_share,competitor_count
+cms_claim_id,reporting_quarter,state,city,zip_code,hcpcs_code,equipment_category,beneficiary_count,total_claims,total_allowed,total_paid,provider_type,home_health_share,competitor_count
 CMS-0000001,Q4-2025,CT,CT_City_1,35259,E0433,Respiratory,4,196,20929.08,3453.86,Home Health Agency,False,1
 CMS-0000002,Q4-2025,NC,Raleigh,45442,E0433,Respiratory,3,67,617.42,30120.35,DME Supplier,False,1
 CMS-0000003,Q4-2025,WY,WY_City_2,12562,E0470,Sleep Therapy,3,84,6503.3,43851.09,Physician Office,True,6

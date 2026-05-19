@@ -6,7 +6,7 @@
 ## Last Reviewed: March 1, 2026
 
 ## Purpose
-To standardize definitions and calculation methodologies for all Key Performance Indicators (KPIs) used across Lincare's three operational domains: Revenue Cycle (Denials), Sales, and Call Center Operations.
+To standardize definitions and calculation methodologies for all Key Performance Indicators (KPIs) used across Home Health's three operational domains: Revenue Cycle (Denials), Sales, and Call Center Operations.
 
 ## Revenue Cycle KPIs
 
@@ -15,7 +15,7 @@ To standardize definitions and calculation methodologies for all Key Performance
 - Calculation: (Denied Claims / Total Claims Submitted) * 100
 - Target: < 5% (industry best-in-class for DME)
 - Industry benchmark: 10-20% for DME suppliers
-- Current Lincare performance: ~17% (Q1 2026)
+- Current Home Health performance: ~17% (Q1 2026)
 - Reporting frequency: Daily, trended weekly
 
 ### Clean Claim Rate
@@ -57,8 +57,8 @@ To standardize definitions and calculation methodologies for all Key Performance
 ## Sales KPIs
 
 ### Market Penetration Rate
-- Definition: Lincare's share of total respiratory DME referrals in a territory
-- Calculation: (Lincare Referrals / Total CMS Respiratory Claims in Territory) * 100
+- Definition: Home Health's share of total respiratory DME referrals in a territory
+- Calculation: (Home Health Referrals / Total CMS Respiratory Claims in Territory) * 100
 - Data source: Internal referrals vs. CMS DMEPOS utilization data
 - Target: 35%+ in established territories, 15%+ in growth territories
 - Reporting frequency: Quarterly (aligned with CMS data release)

@@ -1,6 +1,6 @@
 # Competitive Differentiators: Snowflake vs Fabric vs Databricks
 
-## For Lincare's Three Use Cases
+## For Home Health's Three Use Cases
 
 ### Per-Step Comparison
 
@@ -22,19 +22,19 @@
 ### Key Competitive Narratives
 
 #### "One Platform vs. Assembly Required"
-Snowflake delivers the entire Lincare solution (ingestion, transformation, governance, AI, and applications) as a single platform. Fabric requires 5+ distinct services. Databricks requires custom integration for search and agent capabilities.
+Snowflake delivers the entire Home Health solution (ingestion, transformation, governance, AI, and applications) as a single platform. Fabric requires 5+ distinct services. Databricks requires custom integration for search and agent capabilities.
 
 #### "Declarative vs. Imperative"
 Dynamic Tables are declarative: you define WHAT you want and Snowflake figures out HOW and WHEN. Fabric and Databricks require imperative pipeline definitions with explicit orchestration logic.
 
 #### "Pay for What You Use"
-Lincare's 700 locations generate variable workloads. Snowflake's per-second billing with 60-second auto-suspend means zero cost during quiet hours. Fabric's F-SKU charges regardless of utilization.
+Home Health's 700 locations generate variable workloads. Snowflake's per-second billing with 60-second auto-suspend means zero cost during quiet hours. Fabric's F-SKU charges regardless of utilization.
 
 #### "Zero Infrastructure AI"
 Cortex Search, Cortex Analyst, and Intelligence Agent require zero infrastructure provisioning. No GPU clusters, no vector databases, no embedding model deployment. Just SQL DDL statements.
 
 #### "Unified Governance"
-With HIPAA compliance critical for Lincare, Snowflake's single policy engine (masking, row access, tags) applies instantly and consistently. Fabric's governance varies per engine with documented propagation delays of 5 minutes to 2 hours.
+With HIPAA compliance critical for Home Health, Snowflake's single policy engine (masking, row access, tags) applies instantly and consistently. Fabric's governance varies per engine with documented propagation delays of 5 minutes to 2 hours.
 
 ---
 

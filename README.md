@@ -1,8 +1,8 @@
-# Lincare SnowDay Demo
+# Home Health SnowDay Demo
 
-## Snowflake Platform Demo for Lincare Holdings
+## Snowflake Platform Demo for Home Health Holdings
 
-A comprehensive hands-on lab demonstrating Snowflake's unified data platform across three critical DME (Durable Medical Equipment) use cases for Lincare, the largest US distributor of respiratory homecare equipment.
+A comprehensive hands-on lab demonstrating Snowflake's unified data platform across three critical DME (Durable Medical Equipment) use cases for Home Health, the largest US distributor of respiratory homecare equipment.
 
 ## Use Cases
 
@@ -25,7 +25,7 @@ A comprehensive hands-on lab demonstrating Snowflake's unified data platform acr
 ## Project Structure
 
 ```
-lincare_snowday_demo/
+home_health_snowday_demo/
 ├── README.md                          # This file
 ├── QUICKSTART_GUIDE.md                # Step-by-step lab guide (90 min)
 ├── architecture_diagrams.md           # Mermaid diagrams for presentations
@@ -59,15 +59,15 @@ lincare_snowday_demo/
 │   ├── 12_cortex_search_service.sql   # Document search
 │   ├── 13_intelligence_agent.sql      # Snowflake Intelligence
 │   └── 14_deploy_streamlit.sql        # Dashboard deployment
-├── lincare_analytics_app_sis.py       # Streamlit app
-└── generate_lincare_datasets.py       # Data generation script
+├── home_health_analytics_app_sis.py       # Streamlit app
+└── generate_home_health_datasets.py       # Data generation script
 ```
 
 ## Quick Start
 
-1. **Generate Data**: `python3 generate_lincare_datasets.py`
+1. **Generate Data**: `python3 generate_home_health_datasets.py`
 2. **Run SQL Scripts**: Execute 01-14 in order in Snowsight
-3. **Deploy Dashboard**: Copy `lincare_analytics_app_sis.py` to Streamlit in Snowflake
+3. **Deploy Dashboard**: Copy `home_health_analytics_app_sis.py` to Streamlit in Snowflake
 4. **Test Agent**: Navigate to AI & ML > Snowflake Intelligence
 
 ## Data Summary

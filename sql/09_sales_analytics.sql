@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Sales Analytics
+-- Home Health SnowDay Demo - Sales Analytics
 -- ============================================================================
 -- Deep-dive analytics for Use Case 2: Sales Data Analysis
 -- Blends internal CRM data with CMS Medicare utilization data
@@ -11,9 +11,9 @@
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA ANALYTICS;
-USE WAREHOUSE LINCARE_ANALYTICS_WH;
+USE WAREHOUSE HOME_HEALTH_ANALYTICS_WH;
 
 -- ============================================================================
 -- 1. MARKET PENETRATION BY STATE
@@ -24,12 +24,12 @@ SELECT
     cms.state,
     SUM(cms.total_claims) as total_market_claims,
     SUM(cms.beneficiary_count) as total_beneficiaries,
-    SUM(CASE WHEN cms.lincare_share THEN cms.total_claims ELSE 0 END) as lincare_claims,
-    ROUND(SUM(CASE WHEN cms.lincare_share THEN cms.total_claims ELSE 0 END) * 100.0 /
+    SUM(CASE WHEN cms.home_health_share THEN cms.total_claims ELSE 0 END) as home_health_claims,
+    ROUND(SUM(CASE WHEN cms.home_health_share THEN cms.total_claims ELSE 0 END) * 100.0 /
           NULLIF(SUM(cms.total_claims), 0), 2) as market_share_pct,
     SUM(cms.total_paid) as total_market_revenue,
     AVG(cms.competitor_count) as avg_competitors,
-    COUNT(DISTINCT r.physician_npi) as lincare_referring_physicians
+    COUNT(DISTINCT r.physician_npi) as home_health_referring_physicians
 FROM RAW_DATA.CMS_RESPIRATORY_CLAIMS cms
 LEFT JOIN RAW_DATA.PHYSICIAN_REFERRALS r ON cms.state = r.state
 GROUP BY cms.state
@@ -47,7 +47,7 @@ WITH cms_physicians AS (
     FROM RAW_DATA.CMS_RESPIRATORY_CLAIMS
     GROUP BY state, city
 ),
-lincare_coverage AS (
+home_health_coverage AS (
     SELECT DISTINCT state,
            COUNT(DISTINCT physician_npi) as covered_physicians,
            COUNT(DISTINCT rep_id) as active_reps
@@ -68,7 +68,7 @@ SELECT
     END as coverage_status,
     cp.market_volume * 285.00 * 0.35 as estimated_opportunity_value
 FROM cms_physicians cp
-LEFT JOIN lincare_coverage lc ON cp.state = lc.state
+LEFT JOIN home_health_coverage lc ON cp.state = lc.state
 ORDER BY cp.market_volume DESC;
 
 -- ============================================================================

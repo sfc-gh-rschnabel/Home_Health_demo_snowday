@@ -6,7 +6,7 @@
 ## Last Reviewed: March 1, 2026
 
 ## Purpose
-To standardize the equipment authorization, ordering, delivery, and setup process across all Lincare locations to ensure timely patient access to prescribed DME while maintaining compliance with payer requirements.
+To standardize the equipment authorization, ordering, delivery, and setup process across all Home Health locations to ensure timely patient access to prescribed DME while maintaining compliance with payer requirements.
 
 ## Prior Authorization Requirements by Payer
 
@@ -42,7 +42,7 @@ To standardize the equipment authorization, ordering, delivery, and setup proces
    - Operation of controls and settings
    - Cleaning and maintenance requirements
    - Safety precautions and emergency procedures
-   - When to contact Lincare for issues
+   - When to contact Home Health for issues
 5. Document training completion with patient signature
 6. Verify equipment serial number matches order
 7. Confirm delivery date and time for billing accuracy

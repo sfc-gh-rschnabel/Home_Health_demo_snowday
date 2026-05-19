@@ -1,14 +1,14 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Data Loading
+-- Home Health SnowDay Demo - Data Loading
 -- ============================================================================
 -- Creates tables and loads data from internal stage
--- Upload CSVs first: PUT file:///path/to/data/*.csv @LINCARE_DATA_STAGE;
+-- Upload CSVs first: PUT file:///path/to/data/*.csv @HOME_HEALTH_DATA_STAGE;
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA RAW_DATA;
-USE WAREHOUSE LINCARE_LOAD_WH;
+USE WAREHOUSE HOME_HEALTH_LOAD_WH;
 
 -- ============================================================================
 -- 1. CREATE RAW TABLES
@@ -174,7 +174,7 @@ CREATE OR REPLACE TABLE CMS_RESPIRATORY_CLAIMS (
     total_allowed FLOAT,
     total_paid FLOAT,
     provider_type VARCHAR(50),
-    lincare_share BOOLEAN,
+    home_health_share BOOLEAN,
     competitor_count INT,
     load_timestamp TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
 );
@@ -245,19 +245,19 @@ CREATE OR REPLACE TABLE PATIENT_SATISFACTION (
 -- ============================================================================
 -- 2. LOAD DATA FROM STAGE
 -- ============================================================================
--- First upload files: PUT file:///path/to/lincare_snowday_demo/data/*.csv @LINCARE_DATA_STAGE;
+-- First upload files: PUT file:///path/to/home_health_snowday_demo/data/*.csv @HOME_HEALTH_DATA_STAGE;
 
-COPY INTO LOCATIONS FROM @LINCARE_DATA_STAGE/locations.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO PAYER_CONTRACTS FROM @LINCARE_DATA_STAGE/payer_contracts.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO CLAIMS_SUBMISSIONS FROM @LINCARE_DATA_STAGE/claims_submissions.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO CLAIMS_DENIALS FROM @LINCARE_DATA_STAGE/claims_denials.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO DENIAL_APPEALS FROM @LINCARE_DATA_STAGE/denial_appeals.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO SALES_REP_ACTIVITY FROM @LINCARE_DATA_STAGE/sales_rep_activity.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO PHYSICIAN_REFERRALS FROM @LINCARE_DATA_STAGE/physician_referrals.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO CMS_RESPIRATORY_CLAIMS FROM @LINCARE_DATA_STAGE/cms_respiratory_claims.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO CALL_DETAIL_RECORDS FROM @LINCARE_DATA_STAGE/call_detail_records.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO CALL_AGENT_PERFORMANCE FROM @LINCARE_DATA_STAGE/call_agent_performance.csv FILE_FORMAT = CSV_FORMAT;
-COPY INTO PATIENT_SATISFACTION FROM @LINCARE_DATA_STAGE/patient_satisfaction.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO LOCATIONS FROM @HOME_HEALTH_DATA_STAGE/locations.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO PAYER_CONTRACTS FROM @HOME_HEALTH_DATA_STAGE/payer_contracts.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO CLAIMS_SUBMISSIONS FROM @HOME_HEALTH_DATA_STAGE/claims_submissions.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO CLAIMS_DENIALS FROM @HOME_HEALTH_DATA_STAGE/claims_denials.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO DENIAL_APPEALS FROM @HOME_HEALTH_DATA_STAGE/denial_appeals.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO SALES_REP_ACTIVITY FROM @HOME_HEALTH_DATA_STAGE/sales_rep_activity.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO PHYSICIAN_REFERRALS FROM @HOME_HEALTH_DATA_STAGE/physician_referrals.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO CMS_RESPIRATORY_CLAIMS FROM @HOME_HEALTH_DATA_STAGE/cms_respiratory_claims.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO CALL_DETAIL_RECORDS FROM @HOME_HEALTH_DATA_STAGE/call_detail_records.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO CALL_AGENT_PERFORMANCE FROM @HOME_HEALTH_DATA_STAGE/call_agent_performance.csv FILE_FORMAT = CSV_FORMAT;
+COPY INTO PATIENT_SATISFACTION FROM @HOME_HEALTH_DATA_STAGE/patient_satisfaction.csv FILE_FORMAT = CSV_FORMAT;
 
 -- ============================================================================
 -- 3. VERIFY DATA LOADED

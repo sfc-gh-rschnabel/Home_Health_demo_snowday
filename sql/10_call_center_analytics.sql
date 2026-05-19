@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Call Center Analytics
+-- Home Health SnowDay Demo - Call Center Analytics
 -- ============================================================================
 -- Deep-dive analytics for Use Case 3: Call Center Consolidation
 -- Normalizes data from 3 different phone systems into unified metrics
@@ -11,9 +11,9 @@
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA ANALYTICS;
-USE WAREHOUSE LINCARE_ANALYTICS_WH;
+USE WAREHOUSE HOME_HEALTH_ANALYTICS_WH;
 
 -- ============================================================================
 -- 1. UNIFIED CALL CENTER DASHBOARD

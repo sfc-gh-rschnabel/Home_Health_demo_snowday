@@ -1,11 +1,11 @@
-# Lincare DME Analytics on Snowflake: Quickstart Guide
+# Home Health DME Analytics on Snowflake: Quickstart Guide
 
 ## Overview
 
 **Duration**: 75-90 minutes
 **Level**: Intermediate
 
-Build a complete DME operations analytics platform on Snowflake demonstrating real-world healthcare data management for Lincare's three critical use cases: Denials Reduction, Sales Analytics, and Call Center Consolidation.
+Build a complete DME operations analytics platform on Snowflake demonstrating real-world healthcare data management for Home Health's three critical use cases: Denials Reduction, Sales Analytics, and Call Center Consolidation.
 
 ### What You'll Learn
 - Load and transform healthcare claims, sales, and call center data
@@ -20,7 +20,7 @@ Build a complete DME operations analytics platform on Snowflake demonstrating re
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│              Lincare Operations Analytics Platform            │
+│              Home Health Operations Analytics Platform            │
 ├─────────────────────────────────────────────────────────────┤
 │  Data Sources        │  Dynamic Tables      │  AI Layer      │
 │  ───────────         │  ──────────────      │  ────────      │
@@ -44,7 +44,7 @@ Build a complete DME operations analytics platform on Snowflake demonstrating re
 
 Run `sql/01_setup_environment.sql`
 
-Creates database `LINCARE_DEMO` with four schemas, six roles (BILLING_ADMIN, SALES_MANAGER, CALL_CENTER_LEAD, ANALYST, DATA_ENGINEER, EXECUTIVE), and three warehouses optimized for different workloads.
+Creates database `HOME_HEALTH_DEMO` with four schemas, six roles (BILLING_ADMIN, SALES_MANAGER, CALL_CENTER_LEAD, ANALYST, DATA_ENGINEER, EXECUTIVE), and three warehouses optimized for different workloads.
 
 > **vs Fabric**: In Fabric, you'd need separate Synapse pools, Data Factory instances, and Power BI workspaces. Snowflake does it in one script.
 
@@ -58,7 +58,7 @@ Creates internal stages and CSV file format for data loading.
 
 Then upload data files:
 ```sql
-PUT file:///path/to/lincare_snowday_demo/data/*.csv @LINCARE_DATA_STAGE;
+PUT file:///path/to/home_health_snowday_demo/data/*.csv @HOME_HEALTH_DATA_STAGE;
 ```
 
 ---
@@ -134,7 +134,7 @@ Run scripts 08, 09, 10:
 
 Run `sql/11_semantic_view.sql`
 
-Creates `SV_LINCARE_OPERATIONS` - a single semantic view covering all three use cases with:
+Creates `SV_HOME_HEALTH_OPERATIONS` - a single semantic view covering all three use cases with:
 - 11 tables, 25+ relationships
 - 13 metrics (denial rate, clean claim rate, days in A/R, conversion rate, AHT, FCR, etc.)
 - 23 dimensions (payer, location, equipment, territory, call type, etc.)
@@ -160,7 +160,7 @@ Loads 10 policy documents (28 chunks) and creates a Cortex Search service for RA
 
 Run `sql/13_intelligence_agent.sql`
 
-Creates `LINCARE_OPERATIONS_AGENT` combining:
+Creates `HOME_HEALTH_OPERATIONS_AGENT` combining:
 - **Cortex Analyst** (structured data queries via semantic view)
 - **Cortex Search** (policy document retrieval)
 
@@ -181,8 +181,8 @@ Example questions:
 Run `sql/14_deploy_streamlit.sql` for instructions.
 
 1. Go to Projects > Streamlit > + Streamlit App
-2. Name: `Lincare_Operations_Dashboard`
-3. Paste code from `lincare_analytics_app_sis.py`
+2. Name: `Home Health_Operations_Dashboard`
+3. Paste code from `home_health_analytics_app_sis.py`
 4. Add package: `plotly`
 5. Run
 
@@ -205,7 +205,7 @@ Navigate to AI & ML > Snowflake Intelligence and try:
 
 ### Explore Dynamic Table Refresh
 ```sql
-SHOW DYNAMIC TABLES IN DATABASE LINCARE_DEMO;
+SHOW DYNAMIC TABLES IN DATABASE HOME_HEALTH_DEMO;
 SELECT name, state, refresh_action, data_timestamp
 FROM TABLE(INFORMATION_SCHEMA.DYNAMIC_TABLE_REFRESH_HISTORY())
 WHERE name LIKE 'DT_%' ORDER BY data_timestamp DESC LIMIT 20;
@@ -214,11 +214,11 @@ WHERE name LIKE 'DT_%' ORDER BY data_timestamp DESC LIMIT 20;
 ### Verify Governance
 ```sql
 USE ROLE ANALYST;
-SELECT claim_id, patient_id FROM LINCARE_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 3;
+SELECT claim_id, patient_id FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 3;
 -- patient_id should be masked
 
 USE ROLE BILLING_ADMIN;
-SELECT claim_id, patient_id FROM LINCARE_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 3;
+SELECT claim_id, patient_id FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 3;
 -- patient_id should be visible
 ```
 
@@ -228,11 +228,11 @@ SELECT claim_id, patient_id FROM LINCARE_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 
 
 ```sql
 USE ROLE ACCOUNTADMIN;
-DROP DATABASE IF EXISTS LINCARE_DEMO;
+DROP DATABASE IF EXISTS HOME_HEALTH_DEMO;
 DROP DATABASE IF EXISTS SNOWFLAKE_INTELLIGENCE;
-DROP WAREHOUSE IF EXISTS LINCARE_LOAD_WH;
-DROP WAREHOUSE IF EXISTS LINCARE_ANALYTICS_WH;
-DROP WAREHOUSE IF EXISTS LINCARE_ADHOC_WH;
+DROP WAREHOUSE IF EXISTS HOME_HEALTH_LOAD_WH;
+DROP WAREHOUSE IF EXISTS HOME_HEALTH_ANALYTICS_WH;
+DROP WAREHOUSE IF EXISTS HOME_HEALTH_ADHOC_WH;
 DROP ROLE IF EXISTS BILLING_ADMIN;
 DROP ROLE IF EXISTS SALES_MANAGER;
 DROP ROLE IF EXISTS CALL_CENTER_LEAD;

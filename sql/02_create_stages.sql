@@ -1,13 +1,13 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Create Stages and File Formats
+-- Home Health SnowDay Demo - Create Stages and File Formats
 -- ============================================================================
 -- Creates internal stages and file formats for data loading
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA RAW_DATA;
-USE WAREHOUSE LINCARE_LOAD_WH;
+USE WAREHOUSE HOME_HEALTH_LOAD_WH;
 
 -- 1. Create File Formats
 CREATE OR REPLACE FILE FORMAT CSV_FORMAT
@@ -24,11 +24,11 @@ CREATE OR REPLACE FILE FORMAT JSON_FORMAT
     COMPRESSION = 'AUTO';
 
 -- 2. Create Internal Stages
-CREATE OR REPLACE STAGE LINCARE_DATA_STAGE
+CREATE OR REPLACE STAGE HOME_HEALTH_DATA_STAGE
     FILE_FORMAT = CSV_FORMAT
-    COMMENT = 'Stage for all Lincare demo data files';
+    COMMENT = 'Stage for all Home Health demo data files';
 
-CREATE OR REPLACE STAGE LINCARE_DOCUMENTS_STAGE
+CREATE OR REPLACE STAGE HOME_HEALTH_DOCUMENTS_STAGE
     COMMENT = 'Stage for policy documents used by Cortex Search';
 
 -- 3. Verify

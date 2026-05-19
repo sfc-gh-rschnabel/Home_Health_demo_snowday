@@ -1,4 +1,4 @@
-# Lincare SnowDay Demo - Architecture Diagrams
+# Home Health SnowDay Demo - Architecture Diagrams
 
 ## Overall Platform Architecture
 
@@ -113,7 +113,7 @@ graph LR
 ```mermaid
 graph TB
     User[User_Natural_Language_Query]
-    Agent[Lincare_Operations_Agent]
+    Agent[Home Health_Operations_Agent]
     LLM[Claude_4_Sonnet_Orchestration]
 
     subgraph tools [Agent Tools]
@@ -122,9 +122,9 @@ graph TB
     end
 
     subgraph data [Data Sources]
-        SV[SV_LINCARE_OPERATIONS]
-        Docs[LINCARE_POLICY_DOCUMENTS]
-        SearchSvc[LINCARE_POLICY_SEARCH_Service]
+        SV[SV_HOME_HEALTH_OPERATIONS]
+        Docs[HOME_HEALTH_POLICY_DOCUMENTS]
+        SearchSvc[HOME_HEALTH_POLICY_SEARCH_Service]
     end
 
     User --> Agent

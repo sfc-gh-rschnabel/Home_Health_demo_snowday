@@ -1,13 +1,13 @@
 -- ============================================================================
--- Lincare SnowDay Demo - Denials Analytics
+-- Home Health SnowDay Demo - Denials Analytics
 -- ============================================================================
 -- Deep-dive analytics for Use Case 1: Denials Reduction
 -- ============================================================================
 
 USE ROLE DATA_ENGINEER;
-USE DATABASE LINCARE_DEMO;
+USE DATABASE HOME_HEALTH_DEMO;
 USE SCHEMA ANALYTICS;
-USE WAREHOUSE LINCARE_ANALYTICS_WH;
+USE WAREHOUSE HOME_HEALTH_ANALYTICS_WH;
 
 -- ============================================================================
 -- 1. DENIAL ROOT CAUSE ANALYSIS

@@ -37,12 +37,12 @@ To document payer-specific billing rules that differ from standard CMS guideline
 ### Key Differences from Traditional Medicare
 - Each MA plan can impose additional requirements beyond original Medicare
 - Prior authorization more frequently required
-- Network restrictions may apply (ensure Lincare is in-network for specific plan)
+- Network restrictions may apply (ensure Home Health is in-network for specific plan)
 - May require different forms than standard CMS CMN
 - Appeals go to plan first, then to CMS Independent Review Entity (IRE)
 - Some plans require letter of medical necessity INSTEAD of CMN
 
-### Top MA Payers for Lincare
+### Top MA Payers for Home Health
 - UnitedHealthcare Medicare Advantage: 35% of MA volume
 - Humana Medicare Advantage: 25% of MA volume
 - Aetna Medicare Advantage: 15% of MA volume

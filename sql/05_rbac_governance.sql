@@ -1,5 +1,5 @@
 -- ============================================================================
--- Lincare SnowDay Demo - RBAC & Data Governance
+-- Home Health SnowDay Demo - RBAC & Data Governance
 -- ============================================================================
 -- Demonstrates HIPAA-compliant security: dynamic data masking, row-level
 -- security, and audit capabilities
@@ -10,8 +10,8 @@
 -- ============================================================================
 
 USE ROLE ACCOUNTADMIN;
-USE DATABASE LINCARE_DEMO;
-USE WAREHOUSE LINCARE_ANALYTICS_WH;
+USE DATABASE HOME_HEALTH_DEMO;
+USE WAREHOUSE HOME_HEALTH_ANALYTICS_WH;
 
 -- ============================================================================
 -- 1. DYNAMIC DATA MASKING (Patient PHI Protection)
@@ -110,10 +110,10 @@ SHOW TAGS IN SCHEMA RAW_DATA;
 
 -- Test masking as different roles
 USE ROLE ANALYST;
-SELECT claim_id, patient_id, billed_amount FROM LINCARE_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
+SELECT claim_id, patient_id, billed_amount FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
 
 USE ROLE BILLING_ADMIN;
-SELECT claim_id, patient_id, billed_amount FROM LINCARE_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
+SELECT claim_id, patient_id, billed_amount FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
 
 USE ROLE ACCOUNTADMIN;
 SELECT '✅ RBAC & GOVERNANCE CONFIGURED' as status;

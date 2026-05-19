@@ -6,10 +6,10 @@
 ## Last Reviewed: January 15, 2026
 
 ## Purpose
-To ensure Lincare Holdings maintains full compliance with the Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule, Security Rule, and Breach Notification Rule across all 700+ operating centers.
+To ensure Home Health Holdings maintains full compliance with the Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule, Security Rule, and Breach Notification Rule across all 700+ operating centers.
 
 ## Protected Health Information (PHI) in DME Context
-PHI elements routinely handled by Lincare:
+PHI elements routinely handled by Home Health:
 - Patient names, addresses, phone numbers, email addresses
 - Dates of birth, dates of service, delivery dates
 - Medical record numbers, Medicare/Medicaid beneficiary numbers
@@ -37,7 +37,7 @@ Personnel may only access PHI necessary for their specific job function:
 - Multi-factor authentication required for all data platform access
 
 ## Business Associate Agreements (BAAs)
-BAA required with all entities accessing Lincare patient data:
+BAA required with all entities accessing Home Health patient data:
 - Snowflake (data platform) - BAA executed
 - Clearinghouses (claims submission) - BAA executed per partner
 - Phone system vendors (call recordings with PHI) - BAA required
