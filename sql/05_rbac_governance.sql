@@ -109,11 +109,20 @@ SHOW MASKING POLICIES IN SCHEMA RAW_DATA;
 SHOW TAGS IN SCHEMA RAW_DATA;
 
 -- Test masking as different roles
+-- IMPORTANT: Disable secondary roles so masking policies apply correctly.
+-- With secondary roles enabled (default), your ACCOUNTADMIN privileges override masking.
+USE SECONDARY ROLES NONE;
+
 USE ROLE ANALYST;
+-- patient_id should show as 'PAT-***MASKED***'
 SELECT claim_id, patient_id, billed_amount FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
 
 USE ROLE BILLING_ADMIN;
+-- patient_id should be VISIBLE (unmasked)
 SELECT claim_id, patient_id, billed_amount FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LIMIT 5;
 
+-- Reset secondary roles to default behavior
 USE ROLE ACCOUNTADMIN;
+USE SECONDARY ROLES ALL;
+
 SELECT '✅ RBAC & GOVERNANCE CONFIGURED' as status;
