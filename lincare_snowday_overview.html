@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lincare SnowDay - Snowflake Platform Demo Overview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #1a1a2e;
+    background: #f8f9fb;
+    line-height: 1.6;
+  }
+  .header {
+    background: linear-gradient(135deg, #29B5E8 0%, #0068B5 60%, #003870 100%);
+    padding: 36px 48px;
+    color: white;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .logo-area h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .logo-area .sub {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+  .badge-confidential {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .header-tagline {
+    font-size: 15px;
+    opacity: 0.9;
+    max-width: 600px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 32px 48px;
+  }
+  .section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0068B5;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8f4ff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .icon {
+    width: 28px;
+    height: 28px;
+    background: #e8f4ff;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .use-case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .use-case-card {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+    border-radius: 10px;
+    padding: 18px;
+    border-left: 4px solid #29B5E8;
+  }
+  .use-case-card h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0068B5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .use-case-card .uc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+  .use-case-card p {
+    font-size: 11.5px;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+  .use-case-card .impact {
+    margin-top: 10px;
+    background: white;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #0068B5;
+  }
+  .features-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .features-table thead tr {
+    background: linear-gradient(135deg, #0068B5, #003870);
+    color: white;
+  }
+  .features-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .features-table tbody tr:nth-child(even) {
+    background: #f8fbff;
+  }
+  .features-table tbody tr:hover {
+    background: #e8f4ff;
+  }
+  .features-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: top;
+  }
+  .features-table td:first-child {
+    font-weight: 600;
+    color: #0068B5;
+    white-space: nowrap;
+  }
+  .tag {
+    display: inline-block;
+    background: #e8f4ff;
+    color: #0068B5;
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-right: 3px;
+    margin-top: 2px;
+  }
+  .tag.ai { background: #f0e8ff; color: #6b46c1; }
+  .tag.gov { background: #e8fff0; color: #276749; }
+  .tag.cost { background: #fff8e8; color: #b7600a; }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .stat-card {
+    background: linear-gradient(135deg, #0068B5 0%, #003870 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-card .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .stat-label {
+    font-size: 10.5px;
+    opacity: 0.85;
+    font-weight: 500;
+  }
+  .agenda-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .agenda-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f8fbff;
+    border-radius: 8px;
+    border-left: 3px solid #29B5E8;
+  }
+  .agenda-list li .step-num {
+    background: #0068B5;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .agenda-list li .step-text strong {
+    display: block;
+    font-size: 12px;
+    color: #1a1a2e;
+    margin-bottom: 1px;
+  }
+  .agenda-list li .step-text span {
+    font-size: 11px;
+    color: #718096;
+  }
+  .compete-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .compete-card {
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .compete-card.snowflake {
+    background: linear-gradient(135deg, #e8f4ff, #d0eaff);
+    border: 2px solid #29B5E8;
+  }
+  .compete-card.fabric {
+    background: #fff0f0;
+    border: 1px solid #ffcdd2;
+  }
+  .compete-card.databricks {
+    background: #fff5f0;
+    border: 1px solid #ffccbc;
+  }
+  .compete-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .compete-card.snowflake h4 { color: #0068B5; }
+  .compete-card.fabric h4 { color: #c62828; }
+  .compete-card.databricks h4 { color: #bf360c; }
+  .compete-steps {
+    list-style: none;
+    text-align: left;
+    font-size: 11px;
+  }
+  .compete-steps li {
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot.green { background: #38a169; }
+  .dot.red { background: #e53e3e; }
+  .dot.orange { background: #dd6b20; }
+  .total-badge {
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .total-badge.sf { background: #0068B5; color: white; }
+  .total-badge.fa { background: #c62828; color: white; }
+  .total-badge.db { background: #bf360c; color: white; }
+  .callout {
+    background: linear-gradient(135deg, #003870 0%, #0068B5 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .callout .big-text {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+    color: #29B5E8;
+    white-space: nowrap;
+  }
+  .callout .callout-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .callout .callout-body p {
+    font-size: 12px;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+  .footer {
+    background: #1a1a2e;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 20px 32px;
+    font-size: 11px;
+  }
+  .footer strong { color: white; }
+
+  @media print {
+    @page { size: A4; margin: 12mm 10mm 15mm 10mm; }
+    body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 24px 32px; }
+    .container { padding: 16px 16px 32px; }
+    .section { box-shadow: none; border: none; break-inside: avoid; page-break-inside: avoid; margin-bottom: 16px; }
+    .use-case-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+    .stat-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .features-table thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .features-table tbody tr:nth-child(even) { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .features-table { break-inside: auto; font-size: 10.5px; }
+    .features-table tr { break-inside: avoid; page-break-inside: avoid; }
+    .callout { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+    .compete-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+    .total-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .agenda-list li { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
+    .step-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    tr:hover { background: inherit; }
+    a { text-decoration: none; }
+    .footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-before: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div class="logo-area">
+      <h1>❄ Lincare × Snowflake SnowDay</h1>
+      <div class="sub">Hands-On Lab — Platform Overview</div>
+    </div>
+    <div class="badge-confidential">Confidential</div>
+  </div>
+  <div class="header-tagline">
+    A full-day technical session demonstrating how Snowflake unifies Lincare's claims, sales, and call center data into a single governed platform — replacing siloed tools and unlocking AI-powered analytics.
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Callout -->
+  <div class="callout">
+    <div class="big-text">$4.1B</div>
+    <div class="callout-body">
+      <h3>Revenue at Stake for Lincare</h3>
+      <p>With a 17% claims denial rate and 700 locations running disconnected systems, Lincare has significant revenue and efficiency gains available. This SnowDay demonstrates exactly how Snowflake addresses all three pain points — in a single, governed platform.</p>
+    </div>
+  </div>
+
+  <!-- Use Cases -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🎯</span> Three Use Cases We Will Build Together</div>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <h3>Use Case 1</h3>
+        <div class="uc-title">Denials Reduction</div>
+        <p>End-to-end pipeline from raw claims to predictive denial prevention. Root cause analysis across 700 locations, payer breakdown, and appeal recovery tracking.</p>
+        <div class="impact">⚡ Reduce 17% → <5% denial rate</div>
+      </div>
+      <div class="use-case-card">
+        <h3>Use Case 2</h3>
+        <div class="uc-title">Sales Data Analysis</div>
+        <p>Blend internal CRM activity with CMS Medicare market data to reveal territory gaps, market penetration, and true addressable market per rep.</p>
+        <div class="impact">⚡ Identify uncaptured referral opportunity</div>
+      </div>
+      <div class="use-case-card">
+        <h3>Use Case 3</h3>
+        <div class="uc-title">Call Center Consolidation</div>
+        <p>Unify call records from Avaya, Five9, and RingCentral into a single view. SLA monitoring, agent performance, and cross-domain correlation with denials.</p>
+        <div class="impact">⚡ Unified view across 700+ centers</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Stats -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📊</span> What We'll Work With — Q1 2026 Dataset</div>
+    <div class="data-grid">
+      <div class="stat-card"><div class="stat-value">50K</div><div class="stat-label">Claims Submissions</div></div>
+      <div class="stat-card"><div class="stat-value">8,459</div><div class="stat-label">Denied Claims</div></div>
+      <div class="stat-card"><div class="stat-value">100K</div><div class="stat-label">Call Records (3 systems)</div></div>
+      <div class="stat-card"><div class="stat-value">700</div><div class="stat-label">Operating Centers</div></div>
+      <div class="stat-card"><div class="stat-value">12K</div><div class="stat-label">Physician Referrals</div></div>
+      <div class="stat-card"><div class="stat-value">30K</div><div class="stat-label">CMS Market Records</div></div>
+      <div class="stat-card"><div class="stat-value">500</div><div class="stat-label">FHIR R4 Resources</div></div>
+      <div class="stat-card"><div class="stat-value">224K+</div><div class="stat-label">Total Records</div></div>
+    </div>
+  </div>
+
+  <!-- Agenda -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📋</span> Session Agenda (75–90 Minutes)</div>
+    <ul class="agenda-list">
+      <li><div class="step-num">1</div><div class="step-text"><strong>Environment Setup</strong><span>Database, schemas, roles, warehouses</span></div></li>
+      <li><div class="step-num">2</div><div class="step-text"><strong>Data Loading</strong><span>COPY INTO — 224K records in minutes</span></div></li>
+      <li><div class="step-num">3</div><div class="step-text"><strong>Dimensional Modeling</strong><span>Star schema transforms in SQL</span></div></li>
+      <li><div class="step-num">4</div><div class="step-text"><strong>HIPAA Governance</strong><span>Dynamic masking, row access, PHI tagging</span></div></li>
+      <li><div class="step-num">5</div><div class="step-text"><strong>Compute Scaling</strong><span>Per-second billing, auto-suspend demo</span></div></li>
+      <li><div class="step-num">6</div><div class="step-text"><strong>Dynamic Tables</strong><span>Bronze → Silver → Gold pipeline, no DAGs</span></div></li>
+      <li><div class="step-num">7</div><div class="step-text"><strong>Domain Analytics</strong><span>Denials, sales, call center KPI views</span></div></li>
+      <li><div class="step-num">8</div><div class="step-text"><strong>Marketplace Integration</strong><span>CMS Medicare data, zero ETL</span></div></li>
+      <li><div class="step-num">9</div><div class="step-text"><strong>Semantic View</strong><span>Natural language → SQL (Cortex Analyst)</span></div></li>
+      <li><div class="step-num">10</div><div class="step-text"><strong>Cortex Search</strong><span>RAG over 10 policy documents</span></div></li>
+      <li><div class="step-num">11</div><div class="step-text"><strong>Intelligence Agent</strong><span>Combined AI over data + docs</span></div></li>
+      <li><div class="step-num">12</div><div class="step-text"><strong>Streamlit Dashboard</strong><span>5-tab KPI app with embedded AI chat</span></div></li>
+      <li><div class="step-num">13</div><div class="step-text"><strong>FHIR R4 Pipeline</strong><span>EHR data ingestion via VARIANT + LATERAL FLATTEN</span></div></li>
+      <li><div class="step-num">14</div><div class="step-text"><strong>Explore & Q&amp;A</strong><span>Free exploration, cross-domain queries</span></div></li>
+    </ul>
+  </div>
+
+  <!-- Features -->
+  <div class="section">
+    <div class="section-title"><span class="icon">⚙️</span> Snowflake Features Demonstrated</div>
+    <table class="features-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Feature</th>
+          <th>What It Demonstrates</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Dynamic Tables</td><td>Declarative medallion pipeline (Bronze/Silver/Gold) — no orchestration needed</td><td><span class="tag">Pipeline</span></td></tr>
+        <tr><td>2</td><td>Cortex Analyst (Semantic View)</td><td>Natural language to SQL — native SQL object, zero infrastructure</td><td><span class="tag ai">AI</span></td></tr>
+        <tr><td>3</td><td>Cortex Search</td><td>RAG over unstructured policy documents — built-in, no external service</td><td><span class="tag ai">AI</span></td></tr>
+        <tr><td>4</td><td>Snowflake Intelligence Agent</td><td>Combined Analyst + Search — one CREATE AGENT DDL</td><td><span class="tag ai">AI</span></td></tr>
+        <tr><td>5</td><td>Streamlit in Snowflake</td><td>Multi-tab KPI dashboard with embedded AI chatbot — governed, no BI tool</td><td><span class="tag ai">AI</span></td></tr>
+        <tr><td>6</td><td>Snowflake Marketplace</td><td>CMS Medicare utilization data — zero ETL, always fresh</td><td><span class="tag">Data Sharing</span></td></tr>
+        <tr><td>7</td><td>RBAC + Dynamic Data Masking</td><td>HIPAA-compliant PHI masking by role — instant, unified</td><td><span class="tag gov">Governance</span></td></tr>
+        <tr><td>8</td><td>Row Access Policies</td><td>Location-based data filtering — single policy engine</td><td><span class="tag gov">Governance</span></td></tr>
+        <tr><td>9</td><td>Data Classification Tags</td><td>PHI/PII/FINANCIAL tagging for compliance audits</td><td><span class="tag gov">Governance</span></td></tr>
+        <tr><td>10</td><td>Time Travel + Access History</td><td>90-day audit trail for Medicare compliance</td><td><span class="tag gov">Governance</span></td></tr>
+        <tr><td>11</td><td>Multi-Cluster Warehouses</td><td>Auto-scale 1–5 clusters for concurrent dashboard users</td><td><span class="tag cost">Compute</span></td></tr>
+        <tr><td>12</td><td>Per-Second Billing + Auto-Suspend</td><td>Zero cost when idle (60s auto-suspend)</td><td><span class="tag cost">Cost</span></td></tr>
+        <tr><td>13</td><td>Resource Monitors</td><td>Credit quotas with automatic suspend triggers</td><td><span class="tag cost">Cost</span></td></tr>
+        <tr><td>14</td><td>Semi-Structured Data (VARIANT)</td><td>Native EDI 835/837 and JSON CDR handling — no flattening pipelines</td><td><span class="tag">Data</span></td></tr>
+        <tr><td>15</td><td>COPY INTO (Bulk Loading)</td><td>Parallel loading with auto-scaling</td><td><span class="tag">Data</span></td></tr>
+        <tr><td>16–18</td><td>Stages, Star Schema, Cross-Domain</td><td>Secure staging, dimensional modeling, unified analytics</td><td><span class="tag">Data</span></td></tr>
+        <tr><td>19</td><td>FHIR R4 Pipeline</td><td>EHR data ingestion via LATERAL FLATTEN — clinical joins to claims data</td><td><span class="tag">Data</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Competitive -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏆</span> Why Snowflake vs Microsoft Fabric / Databricks</div>
+    <div class="compete-grid">
+      <div class="compete-card snowflake">
+        <h4>❄ Snowflake</h4>
+        <ul class="compete-steps">
+          <li><span class="dot green"></span> COPY INTO data</li>
+          <li><span class="dot green"></span> CREATE DYNAMIC TABLE</li>
+          <li><span class="dot green"></span> CREATE SEMANTIC VIEW</li>
+          <li><span class="dot green"></span> CREATE AGENT</li>
+          <li><span class="dot green"></span> Streamlit App (native)</li>
+        </ul>
+        <div class="total-badge sf">5 steps — same platform</div>
+      </div>
+      <div class="compete-card fabric">
+        <h4>⬡ Microsoft Fabric</h4>
+        <ul class="compete-steps">
+          <li><span class="dot red"></span> OneLake + Data Factory</li>
+          <li><span class="dot red"></span> Synapse SQL Pool</li>
+          <li><span class="dot red"></span> Power BI Semantic Model</li>
+          <li><span class="dot red"></span> Azure AI Search</li>
+          <li><span class="dot red"></span> Azure OpenAI</li>
+          <li><span class="dot red"></span> Copilot Studio</li>
+          <li><span class="dot red"></span> Power Apps</li>
+        </ul>
+        <div class="total-badge fa">7 services — weeks</div>
+      </div>
+      <div class="compete-card databricks">
+        <h4>◆ Databricks</h4>
+        <ul class="compete-steps">
+          <li><span class="dot orange"></span> Unity Catalog + Ingest</li>
+          <li><span class="dot orange"></span> Delta Live Tables (notebook)</li>
+          <li><span class="dot orange"></span> SQL Warehouse</li>
+          <li><span class="dot orange"></span> Vector Search Index</li>
+          <li><span class="dot orange"></span> Embedding Model Deploy</li>
+          <li><span class="dot orange"></span> Mosaic AI Agent</li>
+          <li><span class="dot orange"></span> External App</li>
+        </ul>
+        <div class="total-badge db">7 steps — multiple services</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Talking Points -->
+  <div class="section">
+    <div class="section-title"><span class="icon">💬</span> Key Talking Points for Lincare</div>
+    <table class="features-table">
+      <thead><tr><th>Topic</th><th>Lincare-Specific Value</th></tr></thead>
+      <tbody>
+        <tr><td>Denial Revenue Recovery</td><td>A 1% improvement in denial rate across 50K monthly claims = millions in protected revenue annually. Snowflake tracks this at full granularity — payer, location, denial code, date.</td></tr>
+        <tr><td>Medicare Compliance</td><td>Lincare has faced past regulatory scrutiny. Snowflake's 90-day Time Travel, Access History, and row-level security provide the audit trail required for CMS compliance — out of the box.</td></tr>
+        <tr><td>CMS Market Intelligence</td><td>Snowflake Marketplace gives sales reps access to Medicare prescribing data by geography — revealing physicians sending 100% of referrals to competitors without any ETL pipeline.</td></tr>
+        <tr><td>Call Center Consolidation</td><td>Avaya, Five9, and RingCentral all output different CDR formats. Snowflake's VARIANT type ingests all three natively — one COPY INTO replaces three custom parsing pipelines.</td></tr>
+        <tr><td>AI — No Infrastructure</td><td>The Intelligence Agent (Cortex Analyst + Cortex Search) is deployed with a single CREATE AGENT DDL. No GPU clusters, no vector databases, no model endpoints to manage.</td></tr>
+        <tr><td>Cross-Domain Insight</td><td>When denials spike, billing inquiry calls spike too. This correlation — only possible on a unified platform — lets Lincare predict staffing needs and patient churn proactively.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Prepared for Lincare Holdings by Snowflake</strong> &nbsp;|&nbsp; Confidential &nbsp;|&nbsp; github.com/sfc-gh-rschnabel/Home_Health_demo_snowday
+</div>
+
+</body>
+</html>

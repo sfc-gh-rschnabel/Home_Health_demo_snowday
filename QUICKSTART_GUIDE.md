@@ -296,7 +296,7 @@ FHIR (Fast Healthcare Interoperability Resources) R4 is the HL7 standard for exc
 
 ### Upload the FHIR Bundle
 ```sql
-PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/ AUTO_COMPRESS=FALSE;
+PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
 ```
 
 ### What This Demonstrates
@@ -307,7 +307,7 @@ PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_H
 -- One COPY INTO loads 500 FHIR resources
 COPY INTO FHIR_RAW.FHIR_BUNDLES (source_file, bundle_data)
 FROM (SELECT METADATA$FILENAME, PARSE_JSON($1)
-      FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/)
+      FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE)
 FILE_FORMAT = (TYPE = 'JSON');
 ```
 

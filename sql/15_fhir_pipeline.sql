@@ -39,10 +39,10 @@ CREATE OR REPLACE TABLE HOME_HEALTH_DEMO.FHIR_RAW.FHIR_BUNDLES (
 -- STEP 2: UPLOAD AND LOAD FHIR BUNDLE
 -- ============================================================================
 -- Upload from local repo:
--- PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/ AUTO_COMPRESS=FALSE;
+-- PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE AUTO_COMPRESS=FALSE;
 
 -- Verify file is staged:
-LIST @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/;
+LIST @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE;
 
 -- Load JSON bundle into VARIANT column
 -- Note: Snowflake parses the entire JSON in one COPY - no ETL pipeline needed
@@ -51,7 +51,7 @@ FROM (
     SELECT
         METADATA$FILENAME,
         PARSE_JSON($1)
-    FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/
+    FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE
 )
 FILE_FORMAT = (TYPE = 'JSON' STRIP_OUTER_ARRAY = FALSE)
 FORCE = TRUE;
