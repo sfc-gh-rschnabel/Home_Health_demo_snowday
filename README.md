@@ -32,6 +32,7 @@ A comprehensive hands-on lab demonstrating Snowflake's unified data platform acr
 | 16 | **Internal Stages** | Secure file staging without external storage | No S3/ADLS configuration required for demo |
 | 17 | **Star Schema Transforms** | Dimensional modeling with SQL | Same platform for ELT vs separate compute engines |
 | 18 | **Cross-Domain Correlation** | Gold-layer tables linking denials → calls → sales | Only possible with all data on one governed platform |
+| 19 | **FHIR R4 Pipeline (VARIANT + LATERAL FLATTEN)** | Native EHR data ingestion + clinical-to-claims joins | No ETL parsing vs Fabric's Data Factory pipelines |
 
 ## Project Structure
 
@@ -98,6 +99,7 @@ home_health_snowday_demo/
 | Call Records | 100,000 | Q1 2026 | CDRs from 3 systems |
 | Agents | 500 | Current | Agent performance |
 | Surveys | 8,000 | Q1 2026 | Patient satisfaction |
+| **FHIR Bundle** | **500 resources** | **Q1 2026** | **50 patients: Conditions, Observations, MedRequests, Encounters** |
 
 ## Key Talking Points
 

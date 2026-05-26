@@ -34,19 +34,19 @@ CREATE OR REPLACE TABLE HOME_HEALTH_POLICY_DOCUMENTS (
 -- ============================================================================
 -- Upload the markdown files from the documents/ folder in the repo:
 --
--- PUT file://./documents/01_claims_submission_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/02_denial_appeal_procedures.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/03_medicare_cmn_requirements.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/04_equipment_authorization_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/05_call_center_sla_standards.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/06_sales_territory_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/07_hipaa_compliance_dme.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/08_payer_billing_rules.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/09_quality_metrics_definitions.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
--- PUT file://./documents/10_referral_management_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/01_claims_submission_guidelines.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/02_denial_appeal_procedures.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/03_medicare_cmn_requirements.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/04_equipment_authorization_policy.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/05_call_center_sla_standards.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/06_sales_territory_policy.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/07_hipaa_compliance_dme.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/08_payer_billing_rules.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/09_quality_metrics_definitions.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+-- PUT file://./documents/10_referral_management_guidelines.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
 
 -- Verify documents are on stage:
-LIST @HOME_HEALTH_DATA_STAGE/documents/;
+LIST @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/;
 
 -- ============================================================================
 -- STEP 3: LOAD AND CHUNK DOCUMENTS
@@ -66,7 +66,7 @@ FROM (
     SELECT
         METADATA$FILENAME,
         TO_VARCHAR($1)
-    FROM @HOME_HEALTH_DATA_STAGE/documents/
+    FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/
 )
 FILE_FORMAT = (TYPE = 'CSV' FIELD_DELIMITER = NONE RECORD_DELIMITER = NONE ESCAPE_UNENCLOSED_FIELD = NONE)
 FORCE = TRUE;

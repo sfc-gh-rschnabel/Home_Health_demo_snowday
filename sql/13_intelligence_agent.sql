@@ -71,7 +71,24 @@ CREATE OR REPLACE AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.HOME_HEALTH_OPERATIONS_AGE
                 "max_results": 10,
                 "columns": ["chunk_content", "document_title", "policy_number", "department", "document_type"]
             }
-        }
+        },
+        "sample_prompts": [
+            "What is our overall denial rate for Q1 2026?",
+            "Show me denial rates by payer, sorted highest to lowest",
+            "Which locations have the highest denial rates?",
+            "How many referrals did our top 5 sales reps generate?",
+            "What is our call abandonment rate by phone system?",
+            "Show me the average handle time trend by week",
+            "What are the CMN requirements for oxygen equipment?",
+            "What is the timely filing limit for Medicare claims?",
+            "What is our target denial rate per policy?",
+            "What are the SLA standards for the billing queue?",
+            "What documentation is needed to appeal a CO-16 denial?",
+            "What is our current denial rate and what is the target per policy?",
+            "Which payers have the highest denial rate and what are their specific billing rules?",
+            "What is our call abandonment rate vs the SLA target?",
+            "Show me locations with high denials - what root causes should we focus on?"
+        ]
     }
     $$;
 

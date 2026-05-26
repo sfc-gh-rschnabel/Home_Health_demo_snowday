@@ -224,16 +224,16 @@ Run `sql/12_cortex_search_service.sql`
 
 First, upload the policy documents from the `documents/` folder to the stage:
 ```sql
-PUT file://./documents/01_claims_submission_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/02_denial_appeal_procedures.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/03_medicare_cmn_requirements.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/04_equipment_authorization_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/05_call_center_sla_standards.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/06_sales_territory_policy.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/07_hipaa_compliance_dme.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/08_payer_billing_rules.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/09_quality_metrics_definitions.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
-PUT file://./documents/10_referral_management_guidelines.md @HOME_HEALTH_DATA_STAGE/documents/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/01_claims_submission_guidelines.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/02_denial_appeal_procedures.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/03_medicare_cmn_requirements.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/04_equipment_authorization_policy.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/05_call_center_sla_standards.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/06_sales_territory_policy.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/07_hipaa_compliance_dme.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/08_payer_billing_rules.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/09_quality_metrics_definitions.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
+PUT file://./documents/10_referral_management_guidelines.md @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DOCUMENTS_STAGE/ AUTO_COMPRESS=FALSE;
 ```
 
 Then run the SQL script which:
@@ -285,7 +285,69 @@ The dashboard has 5 tabs: Executive Summary, Denials Command Center, Sales Intel
 
 ---
 
-## Step 13: Test & Explore (10 minutes)
+---
+
+## Step 13: FHIR R4 Pipeline - EHR Data Integration (15 minutes)
+
+Run `sql/15_fhir_pipeline.sql`
+
+### What is FHIR?
+FHIR (Fast Healthcare Interoperability Resources) R4 is the HL7 standard for exchanging healthcare data. EHR systems (Epic, Cerner, Athena) export patient clinical data as FHIR bundles — diagnoses, observations, medication orders, and encounters in structured JSON.
+
+### Upload the FHIR Bundle
+```sql
+PUT file://./data/home_health_fhir_bundle.json @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/ AUTO_COMPRESS=FALSE;
+```
+
+### What This Demonstrates
+
+**1. Semi-Structured Data (VARIANT)**: The entire FHIR bundle loads as a single VARIANT column — no schema definition needed upfront.
+
+```sql
+-- One COPY INTO loads 500 FHIR resources
+COPY INTO FHIR_RAW.FHIR_BUNDLES (source_file, bundle_data)
+FROM (SELECT METADATA$FILENAME, PARSE_JSON($1)
+      FROM @HOME_HEALTH_DEMO.RAW_DATA.HOME_HEALTH_DATA_STAGE/fhir/)
+FILE_FORMAT = (TYPE = 'JSON');
+```
+
+**2. LATERAL FLATTEN**: Query deeply nested JSON without any ETL pipeline.
+
+```sql
+-- Flatten 500 FHIR entries to individual rows
+SELECT res.value:resource:resourceType::VARCHAR AS resource_type, COUNT(*)
+FROM FHIR_RAW.FHIR_BUNDLES b,
+     LATERAL FLATTEN(input => b.bundle_data:entry) res
+GROUP BY resource_type;
+-- Returns: Patient(50), Condition(100), Observation(150), MedicationRequest(100), Encounter(100)
+```
+
+**3. Cross-Use-Case Joins**: FHIR clinical data joins directly with claims/denials.
+
+```sql
+-- Which OSA patients had their CPAP claim denied?
+SELECT p.given_name, p.family_name, d.denial_code, d.denied_amount
+FROM FHIR_ANALYTICS.V_FHIR_PATIENT p
+JOIN FHIR_ANALYTICS.V_FHIR_CONDITION c ON c.fhir_patient_id = p.fhir_patient_id AND c.icd10_code = 'G47.33'
+JOIN RAW_DATA.CLAIMS_DENIALS d ON d.patient_id = p.home_health_patient_id
+WHERE d.hcpcs_code = 'E0601';
+```
+
+### FHIR Bundle Contents
+| Resource | Count | Code System | DME Relevance |
+|----------|-------|-------------|---------------|
+| Patient | 50 | — | Demographics, Medicare ID |
+| Condition | 100 | ICD-10, SNOMED | OSA, COPD, CHF — diagnoses behind equipment orders |
+| Observation | 150 | LOINC | SpO2, AHI, respiratory rate — clinical justification for O2/CPAP |
+| MedicationRequest | 100 | RxNorm + HCPCS | Equipment prescriptions linked to claims |
+| Encounter | 100 | SNOMED | Home visits, telehealth, office visits |
+
+> **vs Fabric**: Requires Data Factory + custom JSON parsing pipelines for each FHIR resource type.
+> **vs Databricks**: Similar VARIANT support but requires defining flattening logic per resource — no native FHIR integration.
+
+---
+
+## Step 14: Test & Explore (10 minutes)
 
 ### Test the Intelligence Agent
 Navigate to AI & ML > Snowflake Intelligence and try:
@@ -294,6 +356,20 @@ Navigate to AI & ML > Snowflake Intelligence and try:
 - "What documentation do I need to appeal a CO-16 denial?"
 - "Show me sales reps with conversion rates above 15%"
 - "What is the SLA target for billing queue wait time?"
+
+### Explore FHIR Pipeline
+```sql
+-- Check what clinical conditions are most common
+SELECT icd10_code, icd10_display, COUNT(*) AS patient_count
+FROM HOME_HEALTH_DEMO.FHIR_ANALYTICS.V_FHIR_CONDITION
+GROUP BY icd10_code, icd10_display ORDER BY patient_count DESC;
+
+-- Clinical profile of patients with denied claims
+SELECT * FROM HOME_HEALTH_DEMO.FHIR_ANALYTICS.V_DENIED_PATIENTS_CLINICAL_PROFILE LIMIT 10;
+
+-- CPAP patient outcomes (OSA patients + AHI + claim status)
+SELECT * FROM HOME_HEALTH_DEMO.FHIR_ANALYTICS.V_CPAP_PATIENT_OUTCOMES LIMIT 10;
+```
 
 ### Explore Dynamic Table Refresh
 ```sql
@@ -320,7 +396,7 @@ SELECT claim_id, patient_id FROM HOME_HEALTH_DEMO.RAW_DATA.CLAIMS_SUBMISSIONS LI
 
 ```sql
 USE ROLE ACCOUNTADMIN;
-DROP DATABASE IF EXISTS HOME_HEALTH_DEMO;
+DROP DATABASE IF EXISTS HOME_HEALTH_DEMO;  -- drops FHIR_RAW and FHIR_ANALYTICS schemas too
 DROP DATABASE IF EXISTS SNOWFLAKE_INTELLIGENCE;
 DROP WAREHOUSE IF EXISTS HOME_HEALTH_LOAD_WH;
 DROP WAREHOUSE IF EXISTS HOME_HEALTH_ANALYTICS_WH;

@@ -224,3 +224,54 @@ graph TB
     Correlation --> Prediction
     Prediction --> Action
 ```
+
+## FHIR R4 Pipeline Architecture
+
+```mermaid
+graph LR
+    subgraph input [Input]
+        EHR[EHR_System_FHIR_Export]
+        Bundle[FHIR_R4_Bundle_JSON]
+    end
+
+    subgraph snowflake_fhir [Snowflake FHIR Pipeline]
+        Stage[Internal_Stage]
+        Raw[FHIR_RAW.FHIR_BUNDLES_VARIANT]
+        Flatten[LATERAL_FLATTEN]
+
+        subgraph views [FHIR_ANALYTICS Views]
+            VP[V_FHIR_PATIENT]
+            VC[V_FHIR_CONDITION]
+            VO[V_FHIR_OBSERVATION]
+            VM[V_FHIR_MEDICATION_REQUEST]
+            VE[V_FHIR_ENCOUNTER]
+        end
+
+        subgraph cross [Cross-Use-Case Views]
+            VD[V_DENIED_PATIENTS_CLINICAL_PROFILE]
+            VCP[V_CPAP_PATIENT_OUTCOMES]
+        end
+    end
+
+    subgraph claims_data [Existing Claims Data]
+        CD[RAW_DATA.CLAIMS_DENIALS]
+        CS[RAW_DATA.CLAIMS_SUBMISSIONS]
+    end
+
+    EHR --> Bundle
+    Bundle --> Stage
+    Stage --> Raw
+    Raw --> Flatten
+    Flatten --> VP
+    Flatten --> VC
+    Flatten --> VO
+    Flatten --> VM
+    Flatten --> VE
+    VP --> VD
+    VC --> VD
+    CD --> VD
+    VP --> VCP
+    VC --> VCP
+    VM --> VCP
+    CS --> VCP
+```
