@@ -6,13 +6,21 @@ clinically accurate DME-relevant resources.
 
 import json
 import random
+import csv
+import os
 from datetime import date, timedelta
 
 random.seed(99)
 
-# Pull a sample of existing patient IDs from the claims data
-# These match the PAT-XXXXXXX format in claims_submissions.csv
-PATIENT_IDS = [f"PAT-{str(i).zfill(7)}" for i in random.sample(range(1, 180000), 50)]
+# Load patient IDs that are KNOWN to have denied claims
+# This ensures the cross-use-case join in V_DENIED_PATIENTS_CLINICAL_PROFILE returns rows
+_data_dir = os.path.join(os.path.dirname(__file__), "data")
+_denied_ids = set()
+with open(os.path.join(_data_dir, "claims_denials.csv")) as f:
+    for row in csv.DictReader(f):
+        _denied_ids.add(row["patient_id"])
+
+PATIENT_IDS = random.sample(sorted(_denied_ids), 50)
 
 Q1_START = date(2026, 1, 1)
 Q1_END = date(2026, 3, 31)
