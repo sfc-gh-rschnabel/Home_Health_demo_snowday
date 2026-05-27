@@ -77,7 +77,8 @@ SELECT filename, LENGTH(file_content) as doc_length FROM HOME_HEALTH_RAW_DOCUMEN
 -- ============================================================================
 -- STEP 4: CHUNK DOCUMENTS AND INSERT INTO SEARCH TABLE
 -- ============================================================================
--- Split each document into chunks of ~1000 characters at paragraph boundaries
+-- Use SPLIT_TEXT_RECURSIVE_CHARACTER with markdown-aware chunking
+-- ~1500 char chunks with 200 char overlap for better retrieval quality
 
 INSERT INTO HOME_HEALTH_POLICY_DOCUMENTS
 WITH doc_metadata AS (
@@ -126,48 +127,20 @@ WITH doc_metadata AS (
             ELSE 'Policy'
         END as document_type
     FROM HOME_HEALTH_RAW_DOCUMENTS
-),
-chunked AS (
-    SELECT
-        policy_number,
-        document_title,
-        department,
-        document_type,
-        file_content,
-        ROW_NUMBER() OVER (PARTITION BY policy_number ORDER BY policy_number) as base_row,
-        -- Split into ~5 chunks per document based on ## headers
-        CASE
-            WHEN LEN(file_content) <= 2000 THEN file_content
-            ELSE SUBSTRING(file_content, 1, LEAST(2000, CHARINDEX('## ', file_content, 500) - 1))
-        END as chunk_1,
-        CASE
-            WHEN LEN(file_content) > 2000 THEN
-                SUBSTRING(file_content, LEAST(2000, CHARINDEX('## ', file_content, 500)),
-                    LEAST(2000, COALESCE(NULLIF(CHARINDEX('## ', file_content, CHARINDEX('## ', file_content, 500) + 500), 0), LEN(file_content)) - CHARINDEX('## ', file_content, 500)))
-        END as chunk_2,
-        CASE
-            WHEN LEN(file_content) > 4000 THEN
-                SUBSTRING(file_content, 4001, LEAST(2000, LEN(file_content) - 4000))
-        END as chunk_3,
-        CASE
-            WHEN LEN(file_content) > 6000 THEN
-                SUBSTRING(file_content, 6001, LEAST(2000, LEN(file_content) - 6000))
-        END as chunk_4,
-        CASE
-            WHEN LEN(file_content) > 8000 THEN
-                SUBSTRING(file_content, 8001, LEN(file_content) - 8000)
-        END as chunk_5
-    FROM doc_metadata
 )
-SELECT policy_number || '-1' as document_id, document_title, policy_number, department, document_type, '2026-01-01', 1, chunk_1 FROM chunked WHERE chunk_1 IS NOT NULL
-UNION ALL
-SELECT policy_number || '-2', document_title, policy_number, department, document_type, '2026-01-01', 2, chunk_2 FROM chunked WHERE chunk_2 IS NOT NULL
-UNION ALL
-SELECT policy_number || '-3', document_title, policy_number, department, document_type, '2026-01-01', 3, chunk_3 FROM chunked WHERE chunk_3 IS NOT NULL
-UNION ALL
-SELECT policy_number || '-4', document_title, policy_number, department, document_type, '2026-01-01', 4, chunk_4 FROM chunked WHERE chunk_4 IS NOT NULL
-UNION ALL
-SELECT policy_number || '-5', document_title, policy_number, department, document_type, '2026-01-01', 5, chunk_5 FROM chunked WHERE chunk_5 IS NOT NULL;
+SELECT
+    policy_number || '-' || ROW_NUMBER() OVER (PARTITION BY policy_number ORDER BY c.INDEX) as document_id,
+    document_title,
+    policy_number,
+    department,
+    document_type,
+    '2026-01-01'::DATE as effective_date,
+    ROW_NUMBER() OVER (PARTITION BY policy_number ORDER BY c.INDEX) as chunk_id,
+    c.VALUE::TEXT as chunk_content
+FROM doc_metadata,
+LATERAL FLATTEN(
+    SNOWFLAKE.CORTEX.SPLIT_TEXT_RECURSIVE_CHARACTER(file_content, 'markdown', 1500, 200)
+) c;
 
 -- Verify documents loaded and chunked
 SELECT document_title, COUNT(*) as chunks, SUM(LENGTH(chunk_content)) as total_chars
